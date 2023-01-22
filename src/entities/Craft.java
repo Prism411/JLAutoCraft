@@ -7,8 +7,8 @@ public class Craft {
 	private String toCraftName;
 	private String mcName;
 	private String mcContact;
-	
 	private int craftYear;
+	
 	public Craft(int managementNumber, int craftType, PlaceType placeType, String toCraftName, String mcName,
 			String mcContact, int craftYear) {
 		this.ManagementNumber = managementNumber;

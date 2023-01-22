@@ -27,7 +27,7 @@ public class Reader {
 		System.out.println(mcName);
 		String mcContact = br.readLine();
 		System.out.println(mcContact);
-		int  craftYear = Integer.parseInt(br.readLine());
+		int craftYear = Integer.parseInt(br.readLine());
 		System.out.println(craftYear);
 		
 		c = new Craft(ManagementNumber,CraftNumber,CraftType,toName,mcName,mcContact,craftYear);
