@@ -61,6 +61,12 @@ public class Craft {
 	public void setCraftYear(int craftYear) {
 		this.craftYear = craftYear;
 	}
+	@Override
+	public String toString() {
+		return "Craft [ManagementNumber=" + ManagementNumber + ", craftNumber=" + craftNumber + ", placeType="
+				+ placeType + ", toCraftName=" + toCraftName + ", mcName=" + mcName + ", mcContact=" + mcContact
+				+ ", craftYear=" + craftYear + "]";
+	}
 	
 	
 	

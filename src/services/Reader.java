@@ -9,8 +9,9 @@ import entities.PlaceType;
 
 public class Reader {
 	
-	public static void ReadData() {
+	public static Craft ReadData() {
 	
+	Craft c = null;
 	String path = "c:\\temp\\in.txt";
 
 	try (BufferedReader br = new BufferedReader(new FileReader(path))){
@@ -29,11 +30,13 @@ public class Reader {
 		int  craftYear = Integer.parseInt(br.readLine());
 		System.out.println(craftYear);
 		
-		Craft c = new Craft(ManagementNumber,CraftNumber,CraftType,toName,mcName,mcContact,craftYear);
-	
+		c = new Craft(ManagementNumber,CraftNumber,CraftType,toName,mcName,mcContact,craftYear);
+
 	}catch (IOException e) {
 		System.out.println("ERRO IO EXCEPTION");
 	}
+	return c;
+
 		
 	}
 

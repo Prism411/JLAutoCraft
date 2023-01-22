@@ -1,13 +1,14 @@
 package application;
 
+import entities.Craft;
 import services.Reader;
 
 public class Main {
 
 	public static void main(String[] args) {
 		
-		Reader.ReadData();
-
+		Craft craft = Reader.ReadData();
+		System.out.println(craft);
 	}
 
 }
