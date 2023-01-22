@@ -5,38 +5,47 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import entities.Craft;
+import entities.CraftStatic;
 import entities.PlaceType;
 
 public class Reader {
 	
-	public static Craft ReadData() {
+	public static CraftStatic ReadData() {
 	
-	Craft c = null;
-	String path = "c:\\temp\\in.txt";
+	CraftStatic cS = null;
+	String path = "c:\\temp\\CraftStatic.txt";
 
 	try (BufferedReader br = new BufferedReader(new FileReader(path))){
 		int ManagementNumber = Integer.parseInt(br.readLine());
 		System.out.println(ManagementNumber);
-		int CraftNumber = Integer.parseInt(br.readLine());
-		System.out.println(CraftNumber);
-		PlaceType CraftType = PlaceType.valueOf(br.readLine());
-		System.out.println(CraftType);
-		String toName = br.readLine();
-		System.out.println(toName);
+		int CraftYear = Integer.parseInt(br.readLine());
+		System.out.println(CraftYear);
+		
+		String pccName = br.readLine();
+		System.out.println(pccName);
+		
+		String escrvName = br.readLine();
+		System.out.println(escrvName);
+		
 		String mcName = br.readLine();
 		System.out.println(mcName);
+		
 		String mcContact = br.readLine();
 		System.out.println(mcContact);
-		int craftYear = Integer.parseInt(br.readLine());
-		System.out.println(craftYear);
-		String placeName = br.readLine();
-		System.out.println(placeName);
-		c = new Craft(ManagementNumber,CraftNumber,CraftType,toName,mcName,mcContact,craftYear,placeName);
+		
+		String fromChapterName = br.readLine();
+		System.out.println(fromChapterName);
+		
+		String fromChapterNumber = br.readLine();
+		System.out.println(fromChapterNumber);
+		
+		cS = new CraftStatic(ManagementNumber, CraftYear, pccName, escrvName, mcName, mcContact, fromChapterName, fromChapterNumber);
+
 
 	}catch (IOException e) {
 		System.out.println("ERRO IO EXCEPTION");
 	}
-	return c;
+	return cS;
 
 		
 	}
