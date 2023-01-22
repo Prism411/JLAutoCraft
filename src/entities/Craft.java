@@ -8,9 +8,10 @@ public class Craft {
 	private String mcName;
 	private String mcContact;
 	private int craftYear;
+	private String placeName;
 	
 	public Craft(int managementNumber, int craftType, PlaceType placeType, String toCraftName, String mcName,
-			String mcContact, int craftYear) {
+			String mcContact, int craftYear, String placeName) {
 		this.ManagementNumber = managementNumber;
 		this.craftNumber = craftType;
 		this.placeType = placeType;
@@ -18,6 +19,7 @@ public class Craft {
 		this.mcName = mcName;
 		this.mcContact = mcContact;
 		this.craftYear = craftYear;
+		this.placeName = placeName;
 	}
 	public int getManagementNumber() {
 		return ManagementNumber;
@@ -61,11 +63,23 @@ public class Craft {
 	public void setCraftYear(int craftYear) {
 		this.craftYear = craftYear;
 	}
+	public int getCraftNumber() {
+		return craftNumber;
+	}
+	public void setCraftNumber(int craftNumber) {
+		this.craftNumber = craftNumber;
+	}
+	public String getPlaceName() {
+		return placeName;
+	}
+	public void setPlaceName(String placeName) {
+		this.placeName = placeName;
+	}
 	@Override
 	public String toString() {
 		return "Craft [ManagementNumber=" + ManagementNumber + ", craftNumber=" + craftNumber + ", placeType="
 				+ placeType + ", toCraftName=" + toCraftName + ", mcName=" + mcName + ", mcContact=" + mcContact
-				+ ", craftYear=" + craftYear + "]";
+				+ ", craftYear=" + craftYear + ", placeName=" + placeName + "]";
 	}
 	
 	

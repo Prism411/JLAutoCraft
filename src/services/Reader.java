@@ -29,8 +29,9 @@ public class Reader {
 		System.out.println(mcContact);
 		int craftYear = Integer.parseInt(br.readLine());
 		System.out.println(craftYear);
-		
-		c = new Craft(ManagementNumber,CraftNumber,CraftType,toName,mcName,mcContact,craftYear);
+		String placeName = br.readLine();
+		System.out.println(placeName);
+		c = new Craft(ManagementNumber,CraftNumber,CraftType,toName,mcName,mcContact,craftYear,placeName);
 
 	}catch (IOException e) {
 		System.out.println("ERRO IO EXCEPTION");
