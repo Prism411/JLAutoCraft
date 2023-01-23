@@ -4,13 +4,15 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-import entities.Craft;
+import entities.CraftAuto;
+import entities.CraftFloat;
 import entities.CraftStatic;
 import entities.PlaceType;
 
+
 public class Reader {
 	
-	public static CraftStatic ReadData() {
+	public static CraftStatic ReadStaticData() {
 	
 	CraftStatic cS = null;
 	String path = "c:\\temp\\CraftStatic.txt";
@@ -18,9 +20,7 @@ public class Reader {
 	try (BufferedReader br = new BufferedReader(new FileReader(path))){
 		int ManagementNumber = Integer.parseInt(br.readLine());
 		System.out.println(ManagementNumber);
-		int CraftYear = Integer.parseInt(br.readLine());
-		System.out.println(CraftYear);
-		
+
 		String pccName = br.readLine();
 		System.out.println(pccName);
 		
@@ -39,15 +39,57 @@ public class Reader {
 		String fromChapterNumber = br.readLine();
 		System.out.println(fromChapterNumber);
 		
-		cS = new CraftStatic(ManagementNumber, CraftYear, pccName, escrvName, mcName, mcContact, fromChapterName, fromChapterNumber);
+		cS = new CraftStatic(ManagementNumber, pccName, escrvName, mcName, mcContact, fromChapterName, fromChapterNumber);
 
 
 	}catch (IOException e) {
 		System.out.println("ERRO IO EXCEPTION");
 	}
 	return cS;
+	}
+	
+	public static CraftFloat ReadFloatData() {
+		CraftFloat cF = null;
+		String path = "c:\\temp\\CraftFloat.txt";
 
+		try (BufferedReader br = new BufferedReader(new FileReader(path))){
+			
+			PlaceType placeType = PlaceType.valueOf(br.readLine());
+			System.out.println(placeType);
+
+			int toPlaceNumber= Integer.parseInt(br.readLine());
+			System.out.println(toPlaceNumber);
+			
+			String toName = br.readLine();
+			System.out.println(toName);
+			
+			String toPlaceName = br.readLine();
+			System.out.println(toPlaceName);
+			
+			String Reason = br.readLine();
+			System.out.println(Reason);
+			
+			String meetingTime = br.readLine();
+			System.out.println(meetingTime);
+			
+			String dayCraft = br.readLine();
+			System.out.println(dayCraft);
+			
+			String monthCraft = br.readLine();
+			System.out.println(monthCraft);
+			
+			cF = new CraftFloat(placeType, toPlaceNumber, toName, toPlaceName, Reason, meetingTime, dayCraft, monthCraft);
+			
+		}catch (IOException e) {
+			System.out.println("ERRO IO EXCEPTION");
+		}
 		
+		return null;
+	}
+	
+	public static CraftAuto ReadAutoData() {
+		
+		return null;
 	}
 
 }
