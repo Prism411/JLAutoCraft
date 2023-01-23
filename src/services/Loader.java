@@ -18,6 +18,7 @@ import entities.PlaceType;
 
 
 public class Loader {
+	
 	public static void writeCraftStatic(int managementNumber, String pccName, String escrvName, String mcName,
 			String mcContact, String fromChapterName, String fromChapterNumber) {
 		String path = "c:\\temp\\CraftStatic.txt";
@@ -67,6 +68,18 @@ public class Loader {
 		}
 	}
 
+	public static void WriteCraftAdress(String adress, String sponsorShop, int sponsorShopNumber) {
+		String path = "c:\\temp\\CraftAdress.txt";
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter(path))) {
+			bw.write(adress);
+			bw.newLine();
+			bw.write(sponsorShop);
+			bw.newLine();
+			bw.write(Integer.toString(sponsorShopNumber));
+		} catch (IOException e) {
+			System.out.println("ERRO IO EXCEPTION");
+		}
+	}
 	
 	//AutoCraft Management
 	public static void CreateTodayDate() throws IOException {

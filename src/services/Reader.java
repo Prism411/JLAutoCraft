@@ -10,6 +10,7 @@ import entities.CraftAuto;
 import entities.CraftFloat;
 import entities.CraftStatic;
 import entities.PlaceType;
+import entities.craftAdress;
 
 
 public class Reader {
@@ -87,7 +88,7 @@ public class Reader {
 		
 		return cF;
 	}
-	public static CraftAuto ReadAutoData() throws FileNotFoundException {
+	public static CraftAuto ReadAutoData()  {
 		String pathTodayDate = "c:\\temp\\CraftTodayDate.txt";
 		String pathCraftNumber = "c:\\temp\\CraftNumber.txt";
 		CraftAuto cA = null;
@@ -117,7 +118,22 @@ public class Reader {
 			System.out.println("ERRO IO EXCEPTION");
 		}
 		return cA;
-
-    }
+		
+		}
+		
+	
+	public static craftAdress readCraftAdress() {
+		String path = "c:\\temp\\CraftAdress.txt";
+		craftAdress cA = null;
+		try (BufferedReader br = new BufferedReader(new FileReader(path))){
+			String Adress = br.readLine();
+			String SponsorShop = br.readLine();
+			int SponsorShopNumber = Integer.parseInt(br.readLine());
+		cA = new craftAdress(Adress, SponsorShop, SponsorShopNumber);
+	}catch (IOException e) {
+		System.out.println("ERRO IO EXCEPTION");
+}
+	return cA;
+	}
 }
 	
