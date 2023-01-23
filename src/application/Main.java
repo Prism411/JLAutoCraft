@@ -15,7 +15,12 @@ public class Main {
 		
 		CraftStatic cS = Reader.ReadStaticData();
 		System.out.println(cS);
-		Loader.CreateTodayDate();
+		
+		
+		Loader.CreateTodayDate(); //voce precisa chamar esse metodo pra criar uma data a partir do dia.
+		Loader.AddCraftNumber(); //voce chama esse metodo para adicionar um numero no oficio
+		
+		
 
 	}
 

@@ -1,6 +1,8 @@
 package services;
 
 import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -10,6 +12,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.TextStyle;
 import java.util.Locale;
+import java.util.Scanner;
 
 import entities.PlaceType;
 
@@ -58,4 +61,52 @@ public class Loader {
 		bw.flush();
 		bw.close();
 	}
+
+	
+	public static void AddCraftNumber() throws IOException {
+		 // Abre o arquivo para leitura
+        Scanner scanner = new Scanner(new File("c:\\temp\\CraftNumber.txt"));
+
+        // Lê a primeira linha do arquivo
+        String linha = scanner.nextLine();
+
+        // Fecha o arquivo
+        scanner.close();
+
+        // Converte a string lida para inteiro
+        int numero = Integer.parseInt(linha);
+
+        // Adiciona 1 ao número
+        numero++;
+
+        // Escreve o novo número no arquivo
+        FileWriter writer = new FileWriter("c:\\temp\\CraftNumber.txt");
+        writer.write(Integer.toString(numero));
+        writer.close();
+    }
+	public static void RemoveCraftNumber() throws IOException {
+		 // Abre o arquivo para leitura
+       Scanner scanner = new Scanner(new File("c:\\temp\\CraftNumber.txt"));
+
+       // Lê a primeira linha do arquivo
+       String linha = scanner.nextLine();
+
+       // Fecha o arquivo
+       scanner.close();
+
+       // Converte a string lida para inteiro
+       int numero = Integer.parseInt(linha);
+
+       // Adiciona 1 ao número
+       numero--;
+
+       // Escreve o novo número no arquivo
+       FileWriter writer = new FileWriter("c:\\temp\\CraftNumber.txt");
+       writer.write(Integer.toString(numero));
+       writer.close();
+
+		
+	
 }
+}
+
