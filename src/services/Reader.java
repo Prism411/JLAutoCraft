@@ -1,16 +1,10 @@
 package services;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Scanner;
+
 
 import entities.CraftAuto;
 import entities.CraftFloat;
@@ -55,7 +49,6 @@ public class Reader {
 	}
 	return cS;
 	}
-	
 	public static CraftFloat ReadFloatData() {
 		CraftFloat cF = null;
 		String path = "c:\\temp\\CraftFloat.txt";
@@ -92,9 +85,8 @@ public class Reader {
 			System.out.println("ERRO IO EXCEPTION");
 		}
 		
-		return null;
+		return cF;
 	}
-	
 	public static CraftAuto ReadAutoData() throws FileNotFoundException {
 		String pathTodayDate = "c:\\temp\\CraftTodayDate.txt";
 		String pathCraftNumber = "c:\\temp\\CraftNumber.txt";

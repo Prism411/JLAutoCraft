@@ -2,45 +2,73 @@ package services;
 
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
+
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+
+
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+
 import java.time.format.TextStyle;
 import java.util.Locale;
 import java.util.Scanner;
 
 import entities.PlaceType;
 
+
+
 public class Loader {
-	public static void writeData(int managementNumber, int craftNumber, PlaceType placeType, String toCraftName,
-			String mcName, String mcContact, int craftYear, String placeName) {
-		String path = "c:\\temp\\in.txt";
+	public static void writeCraftStatic(int managementNumber, String pccName, String escrvName, String mcName,
+			String mcContact, String fromChapterName, String fromChapterNumber) {
+		String path = "c:\\temp\\CraftStatic.txt";
 		try (BufferedWriter bw = new BufferedWriter(new FileWriter(path))) {
 			bw.write(Integer.toString(managementNumber));
 			bw.newLine();
-			bw.write(Integer.toString(craftNumber));
+			bw.write(pccName);
 			bw.newLine();
-			bw.write(placeType.toString());
-			bw.newLine();
-			bw.write(toCraftName);
+			bw.write(escrvName);
 			bw.newLine();
 			bw.write(mcName);
 			bw.newLine();
 			bw.write(mcContact);
 			bw.newLine();
-			bw.write(Integer.toString(craftYear));
+			bw.write(fromChapterName);
 			bw.newLine();
-			bw.write(placeName);
+			bw.write(fromChapterNumber);
+		} catch (IOException e) {
+			System.out.println("ERRO IO EXCEPTION");
+		}
+	}
+	
+	public static void writeCraftFloat(PlaceType toplaceType, int toPlaceNumber, String toName, String toPlaceName, String reason,
+			String meetingTime, String dayCraft, String monthCraft) {
+		String path = "c:\\temp\\CraftFloat.txt";
+		String toPlaceType = toplaceType.name();
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter(path))) {
+			bw.write(toPlaceType);
+			bw.newLine();
+			bw.write(Integer.toString(toPlaceNumber));
+			bw.newLine();
+			bw.write(toName);
+			bw.newLine();
+			bw.write(toPlaceName);
+			bw.newLine();
+			bw.write(reason);
+			bw.newLine();
+			bw.write(meetingTime);
+			bw.newLine();
+			bw.write(dayCraft);
+			bw.newLine();
+			bw.write(monthCraft);
+			bw.close();
+			
 		} catch (IOException e) {
 			System.out.println("ERRO IO EXCEPTION");
 		}
 	}
 
+	
+	//AutoCraft Management
 	public static void CreateTodayDate() throws IOException {
 
 		// Obtém a data atual
@@ -61,8 +89,6 @@ public class Loader {
 		bw.flush();
 		bw.close();
 	}
-
-	
 	public static void AddCraftNumber() throws IOException {
 		 // Abre o arquivo para leitura
         Scanner scanner = new Scanner(new File("c:\\temp\\CraftNumber.txt"));
@@ -108,5 +134,6 @@ public class Loader {
 		
 	
 }
+	//AutoCraft Management
 }
 
