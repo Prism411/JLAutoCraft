@@ -3,6 +3,11 @@ package services;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import entities.CraftAuto;
 import entities.CraftFloat;
@@ -88,6 +93,15 @@ public class Reader {
 	}
 	
 	public static CraftAuto ReadAutoData() {
+		 LocalDate dataAtual = LocalDate.now();
+	        String dataFormatada = dataAtual.format(DateTimeFormatter.ofPattern("dd, MM, yyyy"));
+	 
+	        // Cria o arquivo de texto
+	        Path arquivo = Paths.get("data.txt");
+	        Files.createFile(arquivo);
+		
+		
+		
 		
 		return null;
 	}
