@@ -11,18 +11,12 @@ public class CraftAuto {
 	private String craftYear; //ano que o oficio é criado
 	private String craftMonth; //mes que o oficio é criado
 	
-	public CraftAuto(SimpleDateFormat sdf, int craftNumber, String craftDate, String craftYear, String craftMonth) {
-		this.sdf = sdf;
+	public CraftAuto(int craftNumber, String craftDate, String craftYear, String craftMonth) {
+
 		this.craftNumber = craftNumber;
 		this.craftDate = craftDate;
 		this.craftYear = craftYear;
 		this.craftMonth = craftMonth;
-	}
-	public SimpleDateFormat getSdf() {
-		return sdf;
-	}
-	public void setSdf(SimpleDateFormat sdf) {
-		this.sdf = sdf;
 	}
 	public int getCraftNumber() {
 		return craftNumber;
@@ -48,5 +42,12 @@ public class CraftAuto {
 	public void setCraftMonth(String craftMonth) {
 		this.craftMonth = craftMonth;
 	}
+	@Override
+	public String toString() {
+		return "CraftAuto craftNumber=" + craftNumber + ", craftDate=" + craftDate + ", craftYear="
+				+ craftYear + ", craftMonth=" + craftMonth + "]";
+	}
+	
+	
 
 }

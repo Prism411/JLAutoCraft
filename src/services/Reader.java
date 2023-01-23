@@ -1,6 +1,8 @@
 package services;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -8,6 +10,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
 
 import entities.CraftAuto;
 import entities.CraftFloat;
@@ -92,18 +95,37 @@ public class Reader {
 		return null;
 	}
 	
-	public static CraftAuto ReadAutoData() {
-		 LocalDate dataAtual = LocalDate.now();
-	        String dataFormatada = dataAtual.format(DateTimeFormatter.ofPattern("dd, MM, yyyy"));
-	 
-	        // Cria o arquivo de texto
-	        Path arquivo = Paths.get("data.txt");
-	        Files.createFile(arquivo);
-		
-		
-		
-		
-		return null;
-	}
+	public static CraftAuto ReadAutoData() throws FileNotFoundException {
+		String pathTodayDate = "c:\\temp\\CraftTodayDate.txt";
+		String pathCraftNumber = "c:\\temp\\CraftNumber.txt";
+		CraftAuto cA = null;
+		try (BufferedReader br = new BufferedReader(new FileReader(pathTodayDate))){
+        // Lê a primeira linha do arquivo
+       String linha = br.readLine();
 
+        // Divide a linha em um array de strings
+        String[] data = linha.split(", ");
+        // Obtém dia, mes e ano
+        String dia = data[0];
+        String mes = data[1];
+        String ano = data[2];
+        
+        System.out.println("Dia: " + dia);
+        System.out.println("Mes: " + mes);
+        System.out.println("Ano: " + ano);
+        br.close();
+        
+        BufferedReader br2 = new BufferedReader(new FileReader(pathCraftNumber));
+        int CraftNumber = Integer.parseInt(br2.readLine());
+        System.out.println(CraftNumber);
+        br2.close();
+        
+        cA = new CraftAuto(CraftNumber, dia, mes, ano);
+		}catch (IOException e) {
+			System.out.println("ERRO IO EXCEPTION");
+		}
+		return cA;
+
+    }
 }
+	
