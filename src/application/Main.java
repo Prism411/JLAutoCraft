@@ -33,6 +33,7 @@ public class Main {
 		craftAdress cA = Reader.readCraftAdress();
 		
 		CraftCreator.CraftCreate(cF, cA, cS, a);
+		Loader.AddCraftNumber();
 		
 		System.out.println(cA);
 		
