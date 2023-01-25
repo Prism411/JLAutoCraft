@@ -11,7 +11,7 @@ public class CraftAuto {
 	private String craftYear; //ano que o oficio é criado
 	private String craftMonth; //mes que o oficio é criado
 	
-	public CraftAuto(int craftNumber, String craftDate, String craftYear, String craftMonth) {
+	public CraftAuto(int craftNumber, String craftDate, String craftMonth, String craftYear) {
 
 		this.craftNumber = craftNumber;
 		this.craftDate = craftDate;

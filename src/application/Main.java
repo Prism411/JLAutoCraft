@@ -20,12 +20,12 @@ public class Main {
 		System.out.println(cS);
 		
 		CraftFloat cF = Reader.ReadFloatData();
-		
+		Loader.CreateTodayDate();
 		CraftAuto a = Reader.ReadAutoData(); //le os valores do oficio automatizado
 		System.out.println(a);
 		
 		//cria um novo CraftFloat com esses dados
-		Loader.writeCraftFloat(PlaceType.CAPITULO, 0, "teste", "teste", "teste", "teste", "teste", "teste"); 
+		Loader.writeCraftFloat(PlaceType.CAPITULO, 0, "teste", "te	ste", "teste", "teste", "teste", "teste"); 
 		//cria um novo CraftStatic com esses dados
 		Loader.writeCraftStatic(732, "pra", "belotinho", "reasdasd", "reiasdasds", "rasdadseis", "reisaasd");
 		//cria um CraftAdress
