@@ -27,7 +27,7 @@ public class Main {
 		//cria um novo CraftFloat com esses dados
 		Loader.writeCraftFloat(PlaceType.CAPITULO, 0, "teste", "te	ste", "teste", "teste", "teste", "teste"); 
 		//cria um novo CraftStatic com esses dados
-		Loader.writeCraftStatic(732, "pra", "belotinho", "reasdasd", "reiasdasds", "rasdadseis", "reisaasd");
+		Loader.writeCraftStatic(732, "Marcos Beloti Leal", "Jáder Louis", "Guilherme Beloti", "reiasdasds", "rasdadseis", "reisaasd");
 		//cria um CraftAdress
 		Loader.WriteCraftAdress("Rua Cabo Liria, Madeira Mamore", "Paz Universal", 18);
 		craftAdress cA = Reader.readCraftAdress();
