@@ -11,6 +11,7 @@ public class CraftStatic {
 	private String mcContact; //contato do mestre Conselheiro
 	private String fromChapterName; //nome do capitulo do usuario
 	private String fromChapterNumber; //numero do capitulo do usuario
+
 	
 	public CraftStatic(int managementNumber, String pccName, String escrvName, String mcName,
 			String mcContact, String fromChapterName, String fromChapterNumber) {
