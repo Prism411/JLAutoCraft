@@ -1,4 +1,11 @@
 package entities;
+
+import java.io.IOException;
+
+import services.CraftCreator;
+import services.Loader;
+import services.Reader;
+
 @SuppressWarnings("unused")
 public class CraftFloat {
 	
@@ -70,6 +77,8 @@ public class CraftFloat {
 	public void setMonthCraft(String monthCraft) {
 		this.monthCraft = monthCraft;
 	}
+	
+
 	
 	
 

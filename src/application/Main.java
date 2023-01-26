@@ -25,7 +25,7 @@ public class Main {
 		while (sucess == false) {
 		try {
 		while (opcao !=5) {
-			System.out.printf("\t\t\tJLAUTOCRAFT MENU 0.1\n1-Criar um Oficio\n2-Mudar Endereço\n3-Mudar Loja Patrocinadora\n4-Mudar dados da gestão\n5-sair");
+			System.out.printf("\t\t\tJLAUTOCRAFT MENU 0.1\n1-Novo Oficio\n2-Mudar Endereço\n3-Mudar Loja Patrocinadora\n4-Mudar dados da gestão\n5-Sair");
 			opcao = sc.nextInt();
 			sucess = true;
 		
@@ -40,6 +40,7 @@ public class Main {
 		System.out.println("5-Permissão de Loja (Tios/Loja Patrocinadora)");
 		int choice = sc.nextInt();
 		sc.nextLine();
+		
 		switch (choice) {
 		case 1: System.out.println("Irmãos Selecionado!");
 		pT = PlaceType.CAPITULO;
@@ -72,6 +73,8 @@ public class Main {
 		System.out.println("Mes da Reunião ");
 		monthCraft = sc.nextLine();
 		
+		CraftCreator.UserCraftCreator(pT, toPlaceNumber, toName, toPlaceName, reason, meetingTime, dayCraft, monthCraft);
+
 		
 		
 		break;
@@ -93,44 +96,13 @@ public class Main {
 			sucess = false;
 		}
 		}
-		try {
-			
-		//cria um novo CraftFloat com esses dados
-		Loader.writeCraftFloat(pT, 0, "teste", "te	ste", "teste", "teste", "teste", "teste"); 
 		//cria um novo CraftStatic com esses dados
-		Loader.writeCraftStatic(732, "Marcos Beloti Leal", "Jáder Louis", "Guilherme Beloti", "reiasdasds", "rasdadseis", "reisaasd");
+		Loader.writeCraftStatic(2, "Marcos Beloti Leal", "Jáder Louis", "Guilherme Beloti", "reiasdasds", "rasdadseis", "reisaasd");
 		//cria um CraftAdress
 		Loader.WriteCraftAdress("Rua Cabo Liria, Madeira Mamore", "Paz Universal", 18);
-		
-		CraftStatic cS = Reader.ReadStaticData();
-		System.out.println(cS);
-		
-		CraftFloat cF = Reader.ReadFloatData();
-		
-			Loader.CreateTodayDate();
-	
-		CraftAuto a = Reader.ReadAutoData(); //le os valores do oficio automatizado
-		System.out.println(a);
-		
-		craftAdress cA = Reader.readCraftAdress();
-		
-		CraftCreator.CraftCreate(cF, cA, cS, a); //cria e escreve o oficio
-		Loader.AddCraftNumber();
-		
-		System.out.println(cA);
-		
-		//Loader.writeCraftFloat(cria um novo CraftFloat com esses dados); 
-		//Loader.writeCraftStatic(cria um novo CraftStatic com esses dados);
-		//CraftCreator.CraftCreate(cF, cA, cS, a); //cria e escreve o oficio
-		//Loader.CreateTodayDate(); //voce precisa chamar esse metodo pra criar uma data a partir do dia.
-		//Loader.AddCraftNumber(); //voce chama esse metodo para adicionar um numero no oficio
-		//Loader.RemoveCraftNumber(); //chama esse metodo para remover um numero do oficio
-		
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 
 	}
+	
+
 
 }

@@ -1,8 +1,10 @@
 package services;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Scanner;
 
 import entities.CraftAuto;
 import entities.CraftFloat;
@@ -63,7 +65,7 @@ public class CraftCreator {
 	    
 	        System.out.println(office.toString());
 	    
-	        try (BufferedWriter bw = new BufferedWriter(new FileWriter("c:\\temp\\out.txt"))) {
+	        try (BufferedWriter bw = new BufferedWriter(new FileWriter("c:\\temp\\out"+craftauto.getCraftNumber()+".txt"))) {
 	            bw.write(office.toString());
 	        } catch (IOException e) {
 	            System.out.println("ERRO IO EXCEPTION");
@@ -91,7 +93,7 @@ public class CraftCreator {
 	    
 	        System.out.println(office.toString());
 	    
-	        try (BufferedWriter bw = new BufferedWriter(new FileWriter("c:\\temp\\out.txt"))) {
+	        try (BufferedWriter bw = new BufferedWriter(new FileWriter("c:\\temp\\out"+craftauto.getCraftNumber()+".txt"))) {
 	            bw.write(office.toString());
 	        } catch (IOException e) {
 	            System.out.println("ERRO IO EXCEPTION");
@@ -120,7 +122,7 @@ public class CraftCreator {
 	    
 	        System.out.println(office.toString());
 	    
-	        try (BufferedWriter bw = new BufferedWriter(new FileWriter("c:\\temp\\out.txt"))) {
+	        try (BufferedWriter bw = new BufferedWriter(new FileWriter("c:\\temp\\out"+craftauto.getCraftNumber()+".txt"))) {
 	            bw.write(office.toString());
 	        } catch (IOException e) {
 	            System.out.println("ERRO IO EXCEPTION");
@@ -147,7 +149,7 @@ public class CraftCreator {
 	    
 	        System.out.println(office.toString());
 	    
-	        try (BufferedWriter bw = new BufferedWriter(new FileWriter("c:\\temp\\out.txt"))) {
+	        try (BufferedWriter bw = new BufferedWriter(new FileWriter("c:\\temp\\out"+craftauto.getCraftNumber()+".txt"))) {
 	            bw.write(office.toString());
 	        } catch (IOException e) {
 	            System.out.println("ERRO IO EXCEPTION");
@@ -176,14 +178,51 @@ public class CraftCreator {
 		    
 		        System.out.println(office.toString());
 		    
-		        try (BufferedWriter bw = new BufferedWriter(new FileWriter("c:\\temp\\out.txt"))) {
+		        try (BufferedWriter bw = new BufferedWriter(new FileWriter("c:\\temp\\out"+craftauto.getCraftNumber()+".txt"))) {
 		            bw.write(office.toString());
 		        } catch (IOException e) {
 		            System.out.println("ERRO IO EXCEPTION");
 		        }
 		    }
 	    
-	    
+		public static void UserCraftCreator(PlaceType toplaceType, int toPlaceNumber, String toName, String toPlaceName, String reason,
+				String meetingTime, String dayCraft, String monthCraft) {
+			Scanner sc = new Scanner(System.in);
+			try {
+			CraftFloat cF = Reader.ReadFloatData(); //le os valores do oficio float
+			craftAdress cA = Reader.readCraftAdress(); //le os valores do endereço
+			CraftAuto a = Reader.ReadAutoData(); //le os valores do oficio automatizado
+			CraftStatic cS = Reader.ReadStaticData(); //le os valores do oficio estatico
+			
+			Loader.writeCraftFloat(toplaceType,toPlaceNumber,toName,toPlaceName,reason,meetingTime,dayCraft,monthCraft); 
+			cF = Reader.ReadFloatData();
+			CraftCreator.CraftCreate(cF, cA, cS, a); //cria e escreve o oficio
+			Loader.AddCraftNumber();
+			System.out.printf("1-Deseja criar um novo oficio?\n2-Deseja deletar este oficio?");
+			int opcao = sc.nextInt();
+			switch(opcao) {
+			case 1:
+				break;
+				
+			case 2: 
+				File file = new File("c:\\temp\\out"+a.getCraftNumber()+".txt");
+				if(file.delete()){
+				    System.out.println(file.getName() + " is deleted!");
+				}else{
+				    System.out.println("Delete operation is failed.");
+				}
+			Loader.RemoveCraftNumber();
+			break;
+			}
+			
+			
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+		}
+		
+
 	    
 	    
 	}
