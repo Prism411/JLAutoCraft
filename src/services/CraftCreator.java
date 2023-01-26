@@ -186,8 +186,7 @@ public class CraftCreator {
 		    }
 	    
 		public static void UserCraftCreator(PlaceType toplaceType, int toPlaceNumber, String toName, String toPlaceName, String reason,
-				String meetingTime, String dayCraft, String monthCraft) {
-			Scanner sc = new Scanner(System.in);
+				String meetingTime, String dayCraft, String monthCraft, Scanner sc) {
 			try {
 			CraftFloat cF = Reader.ReadFloatData(); //le os valores do oficio float
 			craftAdress cA = Reader.readCraftAdress(); //le os valores do endereço
@@ -202,6 +201,7 @@ public class CraftCreator {
 			int opcao = sc.nextInt();
 			switch(opcao) {
 			case 1:
+				
 				
 				
 				break;
@@ -220,6 +220,21 @@ public class CraftCreator {
 			
 			} catch (IOException e) {
 				e.printStackTrace();
+			}
+			
+		}
+		
+		public static void CraftChangeFloat(PlaceType toplaceType, int toPlaceNumber, String toName, String toPlaceName, String reason,
+				String meetingTime, String dayCraft, String monthCraft, Scanner sc) {
+			char opcao;
+			System.out.println("Deseja Mudar algo? (s/n)");
+			opcao = sc.nextLine().charAt(0);
+			if (opcao == 's') {
+				
+			} else {
+				
+				UserCraftCreator(toplaceType, toPlaceNumber, toName, toPlaceName, reason, meetingTime, dayCraft, monthCraft, sc);
+				
 			}
 			
 		}
