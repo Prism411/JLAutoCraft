@@ -1,5 +1,7 @@
 package services;
 
+import java.util.Scanner;
+
 import entities.PlaceType;
 
 public class CraftMenu {
@@ -25,5 +27,43 @@ public class CraftMenu {
 	}
 	return pT;
 }
+
+	public static String toPName(Scanner sc) {
+		System.out.println("Insira o nome do lugar");
+		String toPlaceName = sc.nextLine();
+		return toPlaceName;
+	}
 	
+	public static int toPNumber(Scanner sc) {
+		System.out.println("Insira o numero do Lugar)");
+		int toPlaceNumber = sc.nextInt();
+		return toPlaceNumber;
+	}
+	
+	public static String toPersonName(Scanner sc) {
+		System.out.println("Insira o nome da pessoa (MC/HR/VM/Pessoa Comum)");
+		String toPName = sc.nextLine();
+		return toPName;
+	}
+	public static String toReason(Scanner sc) {
+		System.out.println("Insira o Assunto da Reunião");
+		String toReason = sc.nextLine();
+		return toReason;
+	}
+	public static String toMeetingTime(Scanner sc) {
+		System.out.println("Horario da reunião (XX:XX)");
+		String meetingTime = sc.nextLine();
+		return meetingTime;
+	}
+	public static String toDayDate(Scanner sc) {
+		System.out.println("Dia da reunião");
+		String toDayDate = sc.nextLine();
+		return toDayDate;
+	}
+	public static String toMonthDate(Scanner sc) {
+
+		System.out.println("Mes da reunião");
+		String toMonthDate = sc.nextLine();
+		return toMonthDate;
+	}
 }

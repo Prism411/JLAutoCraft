@@ -41,22 +41,22 @@ public class Main {
 		System.out.println("5-Permissão de Loja (Tios/Loja Patrocinadora)");
 		int choice = sc.nextInt();
 		sc.nextLine();
-		CraftMenu.ChooseType(choice, pT);
-		System.out.println("Nome do Lugar");
-		toPlaceName = sc.nextLine();
-		System.out.println("Numero do Lugar");
-		toPlaceNumber = sc.nextInt(); sc.nextLine();
-		System.out.println("Nome do(a) VM,HR,MC,Pessoa...");
-		toName = sc.nextLine();
-		System.out.println("Assunto:");
-		reason = sc.nextLine();
-		System.out.println("Horario da reunião (XX:XX)");
-		meetingTime = sc.nextLine();
-		System.out.println("Dia da reunião ");
-		dayCraft = sc.nextLine();
-		System.out.println("Mes da Reunião ");
-		monthCraft = sc.nextLine();
+		pT = CraftMenu.ChooseType(choice, pT);
+	
+		toPlaceName = CraftMenu.toPName(sc);
 		
+		toPlaceNumber = CraftMenu.toPNumber(sc); sc.nextLine();
+		
+		toName = CraftMenu.toPersonName(sc);
+
+		reason = CraftMenu.toReason(sc);
+		
+		meetingTime = CraftMenu.toMeetingTime(sc);
+		
+		dayCraft = CraftMenu.toDayDate(sc);
+		
+		monthCraft = CraftMenu.toMonthDate(sc);
+
 		CraftCreator.UserCraftCreator(pT, toPlaceNumber, toName, toPlaceName, reason, meetingTime, dayCraft, monthCraft);
 
 		
@@ -73,6 +73,7 @@ public class Main {
 		
 		
 		}
+		sc.close();
 		} catch (InputMismatchException e) {
 			sc.next();
 			System.out.println("ERRO! digite um numero!");
