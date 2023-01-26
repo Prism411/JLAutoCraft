@@ -202,6 +202,8 @@ public class CraftCreator {
 			int opcao = sc.nextInt();
 			switch(opcao) {
 			case 1:
+				
+				
 				break;
 				
 			case 2: 

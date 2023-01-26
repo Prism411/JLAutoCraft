@@ -10,6 +10,7 @@ import entities.CraftStatic;
 import entities.PlaceType;
 import entities.craftAdress;
 import services.CraftCreator;
+import services.CraftMenu;
 import services.Loader;
 import services.Reader;
 
@@ -40,24 +41,7 @@ public class Main {
 		System.out.println("5-Permissão de Loja (Tios/Loja Patrocinadora)");
 		int choice = sc.nextInt();
 		sc.nextLine();
-		
-		switch (choice) {
-		case 1: System.out.println("Irmãos Selecionado!");
-		pT = PlaceType.CAPITULO;
-		break;
-		case 2: System.out.println("Primas Selecionado!");
-		pT = PlaceType.BETHEL;
-		break;
-		case 3: System.out.println("Tios Selecionado!");
-		pT = PlaceType.LOJA;
-		break;
-		case 4: System.out.println("Pessoa Comum Selecionado!");
-		pT = PlaceType.PESSOA;
-		break;
-		case 5: System.out.println("Tios/Loja Selecionado!");
-		pT = PlaceType.LodgePerm;
-		break;
-		}
+		CraftMenu.ChooseType(choice, pT);
 		System.out.println("Nome do Lugar");
 		toPlaceName = sc.nextLine();
 		System.out.println("Numero do Lugar");
