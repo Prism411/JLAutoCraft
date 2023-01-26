@@ -57,10 +57,8 @@ public class Main {
 		
 		monthCraft = CraftMenu.toMonthDate(sc);
 
-		CraftCreator.UserCraftCreator(pT, toPlaceNumber, toName, toPlaceName, reason, meetingTime, dayCraft, monthCraft);
+		CraftCreator.UserCraftCreator(pT, toPlaceNumber, toName, toPlaceName, reason, meetingTime, dayCraft, monthCraft, sc);
 
-		
-		
 		break;
 		
 		case 2:

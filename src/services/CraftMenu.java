@@ -1,5 +1,6 @@
 package services;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import entities.PlaceType;
@@ -27,19 +28,16 @@ public class CraftMenu {
 	}
 	return pT;
 }
-
 	public static String toPName(Scanner sc) {
 		System.out.println("Insira o nome do lugar");
 		String toPlaceName = sc.nextLine();
 		return toPlaceName;
 	}
-	
 	public static int toPNumber(Scanner sc) {
 		System.out.println("Insira o numero do Lugar)");
 		int toPlaceNumber = sc.nextInt();
 		return toPlaceNumber;
 	}
-	
 	public static String toPersonName(Scanner sc) {
 		System.out.println("Insira o nome da pessoa (MC/HR/VM/Pessoa Comum)");
 		String toPName = sc.nextLine();
@@ -61,9 +59,38 @@ public class CraftMenu {
 		return toDayDate;
 	}
 	public static String toMonthDate(Scanner sc) {
-
 		System.out.println("Mes da reunião");
 		String toMonthDate = sc.nextLine();
 		return toMonthDate;
 	}
+	@SuppressWarnings("unused")
+	public static String ChangeTo(int choice, Scanner sc) {
+		PlaceType pt=null;
+		int toPlaceNumber=0;
+		switch (choice){
+		
+		case 1:
+		System.out.println("Qual o tipo de oficio a ser criado?");
+		System.out.println("1-Capitulos (Irmãos)");
+		System.out.println("2-Betheis (Primas)");
+		System.out.println("3-Lojas (Tios)");
+		System.out.println("4-Pessoa (Pessoa Comum)");
+		System.out.println("5-Permissão de Loja (Tios/Loja Patrocinadora)");
+		int opcao = sc.nextInt();
+		sc.nextLine();
+		 pt = ChooseType(opcao,pt);
+		return pt.toString();  
+		case 2:
+			System.out.println("Entre com o novo Numero do Capitulo");
+			String num = sc.nextLine();
+			return num;
+		
+		}
+		
+		
+		
+		return null;
+}
+	
+	
 }

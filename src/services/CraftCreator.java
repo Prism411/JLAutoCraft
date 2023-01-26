@@ -199,8 +199,9 @@ public class CraftCreator {
 			Loader.AddCraftNumber();
 			System.out.printf("1-Deseja criar um novo oficio?\n2-Deseja deletar este oficio?");
 			int opcao = sc.nextInt();
+			sc.nextLine();
 			switch(opcao) {
-			case 1:
+			case 1:  CraftChangeFloat(toplaceType,toPlaceNumber,toName,toPlaceName,reason,meetingTime,dayCraft,monthCraft,sc);
 				
 				
 				
@@ -230,11 +231,34 @@ public class CraftCreator {
 			System.out.println("Deseja Mudar algo? (s/n)");
 			opcao = sc.nextLine().charAt(0);
 			if (opcao == 's') {
+			int choice = 0;
+			while (choice != 8) {
+			System.out.println("O que deseja Mudar?");
+			System.out.printf("\n1-Mudar Tipo\n2-Mudar Numero do Localn3-Mudar Nome do MC/VM/PESSOA"
+			+ "\n4-Mudar Assunto da Reunião\n 5-Mudar Horario da Reunião\n6-Mudar Dia da Reunião\n7-Mudar Mês\n8-Criar Oficio");
+			choice = sc.nextInt();
+			sc.nextLine();
+			switch (choice) {
+			case 1: toplaceType = PlaceType.valueOf(CraftMenu.ChangeTo(choice,sc)); break;
+			case 2: toPlaceNumber =  Integer.parseInt(CraftMenu.ChangeTo(choice,sc)); break;
+			case 3: toName = CraftMenu.ChangeTo(choice,sc); break;
+			case 4: reason = CraftMenu.ChangeTo(choice,sc); break;
+			case 5: meetingTime = CraftMenu.ChangeTo(choice,sc); break;
+			case 6: dayCraft = CraftMenu.ChangeTo(choice,sc); break;
+			case 7: monthCraft = CraftMenu.ChangeTo(choice,sc); break;
+			case 8: UserCraftCreator(toplaceType,toPlaceNumber,toName,toPlaceName,reason,meetingTime,dayCraft,monthCraft, sc);
+			}
+			}
 				
-			} else {
+			
+			
+			
+			
+			
+			
 				
-				UserCraftCreator(toplaceType, toPlaceNumber, toName, toPlaceName, reason, meetingTime, dayCraft, monthCraft, sc);
-				
+
+			} else {UserCraftCreator(toplaceType, toPlaceNumber, toName, toPlaceName, reason, meetingTime, dayCraft, monthCraft, sc);	
 			}
 			
 		}
