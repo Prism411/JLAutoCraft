@@ -17,8 +17,9 @@ import services.Reader;
 public class Main {
 
 	public static void main(String[] args)  {
-		int opcao = 0;
+		int opcao = 0, toPlaceNumber = 0;
 		PlaceType pT = null;
+		String toName,toPlaceName,reason,meetingTime,dayCraft,monthCraft;
 		Scanner sc = new Scanner(System.in);
 		boolean sucess = false;
 		while (sucess == false) {
@@ -38,6 +39,7 @@ public class Main {
 		System.out.println("4-Pessoa (Pessoa Comum)");
 		System.out.println("5-Permissão de Loja (Tios/Loja Patrocinadora)");
 		int choice = sc.nextInt();
+		sc.nextLine();
 		switch (choice) {
 		case 1: System.out.println("Irmãos Selecionado!");
 		pT = PlaceType.CAPITULO;
@@ -55,6 +57,23 @@ public class Main {
 		pT = PlaceType.LodgePerm;
 		break;
 		}
+		System.out.println("Nome do Lugar");
+		toPlaceName = sc.nextLine();
+		System.out.println("Numero do Lugar");
+		toPlaceNumber = sc.nextInt(); sc.nextLine();
+		System.out.println("Nome do(a) VM,HR,MC,Pessoa...");
+		toName = sc.nextLine();
+		System.out.println("Assunto:");
+		reason = sc.nextLine();
+		System.out.println("Horario da reunião (XX:XX)");
+		meetingTime = sc.nextLine();
+		System.out.println("Dia da reunião ");
+		dayCraft = sc.nextLine();
+		System.out.println("Mes da Reunião ");
+		monthCraft = sc.nextLine();
+		
+		
+		
 		break;
 		
 		case 2:
@@ -77,7 +96,7 @@ public class Main {
 		try {
 			
 		//cria um novo CraftFloat com esses dados
-		Loader.writeCraftFloat(PlaceType.LodgePerm, 0, "teste", "te	ste", "teste", "teste", "teste", "teste"); 
+		Loader.writeCraftFloat(pT, 0, "teste", "te	ste", "teste", "teste", "teste", "teste"); 
 		//cria um novo CraftStatic com esses dados
 		Loader.writeCraftStatic(732, "Marcos Beloti Leal", "Jáder Louis", "Guilherme Beloti", "reiasdasds", "rasdadseis", "reisaasd");
 		//cria um CraftAdress
