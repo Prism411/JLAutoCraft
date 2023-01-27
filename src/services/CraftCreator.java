@@ -233,7 +233,7 @@ public class CraftCreator {
 			while (choice != 9) {
 			System.out.println("O que deseja Mudar?");
 			System.out.printf("\n1-Mudar Tipo\n2-Mudar Numero do Localn3-Mudar Nome do MC/VM/PESSOA"
-			+ "\n4-Mudar Assunto da Reunião\n 5-Mudar Horario da Reunião\n6-Mudar Dia da Reunião\n7-Mudar Mês\n8-Criar Oficio\n9-Parar");
+			+ "\n4-Mudar Assunto da Reunião\n5-Mudar Horario da Reunião\n6-Mudar Dia da Reunião\n7-Mudar Mês\n8-Criar Oficio\n9-Parar");
 			choice = sc.nextInt();
 			sc.nextLine();
 			switch (choice) {
@@ -246,6 +246,7 @@ public class CraftCreator {
 			case 7: monthCraft = CraftMenu.ChangeTo(choice,sc); break;
 			case 8: System.out.println("Oficio Criado!");
 				UserCraftCreator(toplaceType,toPlaceNumber,toName,toPlaceName,reason,meetingTime,dayCraft,monthCraft, sc); break;
+
 			}
 			}
 				

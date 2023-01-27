@@ -21,8 +21,8 @@ public class Main {
 		while (sucess == false) {
 		try {
 		while (opcao !=5) {
-			System.out.printf("\t\t\tJLAUTOCRAFT MENU 0.1\n1-Criar Oficio a partir do Banco de dados\n2-Novo Oficio do ZERO\n3-Mudar Endereço\n4-Mudar Loja Patrocinadora\n5-Mudar dados da gestão\n6-Sair");
-			opcao = sc.nextInt();
+			System.out.printf("\t\t\tCRIADOR DE OFICIO DO CAPITULO PAULO ROBERTO DE AMORIM MENU 0.1\n1-Criar Oficio a partir do Banco de dados\n2-Novo Oficio do ZERO\n3-Mudar Endereço\n4-Mudar Loja Patrocinadora\n5-Mudar dados da gestão\n6-Sair");
+			opcao = sc.nextInt(); sc.nextLine();
 			sucess = true;
 		
 		switch (opcao) {
@@ -30,6 +30,7 @@ public class Main {
 		case 1: choice = CraftMenu.ChoiceCreatorToDatabase(sc);
 		pT = CraftMenu.ChooseType(choice, pT);
 		DatabaseService.DatabaseSelector(pT,sc);
+		break;
 		
 		case 2: 
 	
@@ -53,6 +54,7 @@ public class Main {
 
 		CraftCreator.UserCraftCreator(pT, toPlaceNumber, toName, toPlaceName, reason, meetingTime, dayCraft, monthCraft, sc);
 
+		System.out.println("cabo");
 		break;
 		
 		case 3: // Inserir dados p/ CraftAdress
@@ -61,7 +63,16 @@ public class Main {
 		case 4: //mudar dados sobre loja patrocinadora do capitulo
 			break;
 			
-		case 5: //aqui muda os dados sobre a gestão (CraftStatic)
+		case 5: String capName = CraftMenu.CapName(sc);
+				String CapNumber = CraftMenu.CapNumber(sc);
+				int ManagementNumber = CraftMenu.ManagementNumber(sc);
+				String McName = CraftMenu.McName(sc);
+				String McContact = CraftMenu.McContact(sc);
+				String escrvName = CraftMenu.EscrvName(sc);
+				String pccName = CraftMenu.pccName(sc);
+				Loader.writeCraftStatic(ManagementNumber, pccName,escrvName, McName, McContact, capName, CapNumber);
+				System.out.println("Informações Implementadas! REINICIANDO!!!");
+			//aqui muda os dados sobre a gestão (CraftStatic)
 			break;	
 			
 		}
@@ -78,7 +89,7 @@ public class Main {
 		}
 		}
 		//cria um novo CraftStatic com esses dados
-		Loader.writeCraftStatic(2, "Marcos Beloti Leal", "Jáder Louis", "Guilherme Beloti", "reiasdasds", "rasdadseis", "reisaasd");
+		//Loader.writeCraftStatic(2, "Marcos Beloti Leal", "Jáder Louis", "Guilherme Beloti", "reiasdasds", "rasdadseis", "reisaasd");
 		//cria um CraftAdress
 		Loader.WriteCraftAdress("Rua Cabo Liria, Madeira Mamore", "Paz Universal", 18);
 
