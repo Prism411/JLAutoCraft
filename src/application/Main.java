@@ -1,18 +1,13 @@
 package application;
 
-import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import entities.CraftAuto;
-import entities.CraftFloat;
-import entities.CraftStatic;
 import entities.PlaceType;
-import entities.craftAdress;
 import services.CraftCreator;
 import services.CraftMenu;
+import services.DatabaseService;
 import services.Loader;
-import services.Reader;
 
 @SuppressWarnings("unused")
 public class Main {
@@ -32,7 +27,9 @@ public class Main {
 		
 		switch (opcao) {
 		
-		case 1:
+		case 1: choice = CraftMenu.ChoiceCreatorToDatabase(sc);
+		pT = CraftMenu.ChooseType(choice, pT);
+		DatabaseService.DatabaseSelector(pT,sc);
 		
 		case 2: 
 	

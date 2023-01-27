@@ -84,19 +84,19 @@ public class CraftMenu {
 			System.out.println("Entre com o novo Numero do Capitulo");
 			String num = sc.nextLine();
 			return num;
-		case 3: System.out.println("Entre com o novo Numero do Capitulo");
+		case 3: System.out.println("Entre com o novo nome da Pessoa");
 		word = sc.nextLine();
 		return word;
-		case 4: System.out.println("Entre com o novo Numero do Capitulo");
+		case 4: System.out.println("Entre com o novo Assunto");
 		word = sc.nextLine();
 		return word;
-		case 5: System.out.println("Entre com o novo Numero do Capitulo");
+		case 5: System.out.println("Entre com o novo horario");
 		word = sc.nextLine();
 		return word;
-		case 6: System.out.println("Entre com o novo Numero do Capitulo");
+		case 6: System.out.println("Entre com o novo dia da reuniao");
 		word = sc.nextLine();
 		return word;
-		case 7: System.out.println("Entre com o novo Numero do Capitulo");
+		case 7: System.out.println("Entre com o novo mes");
 		word = sc.nextLine();
 		return word;
 		}
@@ -116,5 +116,54 @@ public class CraftMenu {
 		sc.nextLine();
 		return choice;
 	}
+	public static int ChoiceCreatorToDatabase(Scanner sc) {
+		System.out.println("Qual o tipo de oficio a ser criado?");
+		System.out.println("1-Capitulos (Irmãos)");
+		System.out.println("2-Betheis (Primas)");
+		System.out.println("3-Lojas (Tios)");
+		int choice = sc.nextInt();
+		sc.nextLine();
+		return choice;
+	}
 	
-}
+	
+	public static int ManagementNumber(Scanner sc) {
+		System.out.println("Numero do semestre da gestão (1-2)");
+		int toPlaceNumber = sc.nextInt();
+		sc.nextLine();
+		return toPlaceNumber;
+	}
+	public static String pccName(Scanner sc) {
+		System.out.println("Presidente do Conselho Consultivo nome:");
+		String answer = sc.nextLine();
+		return answer;
+	}
+	public static String EscrvName(Scanner sc) {
+		System.out.println("Nome do Escrivão");
+		String answer = sc.nextLine();
+		return answer;
+	}
+	public static String McName(Scanner sc) {
+		System.out.println("Nome do mestre COnselheiro");
+		String answer = sc.nextLine();
+		return answer;
+	}
+	public static String McContact(Scanner sc) {
+		System.out.println("Contato do Mestre Conselheiro");
+		String answer = sc.nextLine();
+		return answer;
+	}
+	public static String CapName(Scanner sc) {
+		System.out.println("Nome do Capitulo");
+		String answer = sc.nextLine();
+		return answer;
+	}
+	public static String CapNumber(Scanner sc) {
+		System.out.println("Numero do Capitulo");
+		String answer = sc.nextLine();
+		return answer;
+	}
+		
+		
+	}
+
