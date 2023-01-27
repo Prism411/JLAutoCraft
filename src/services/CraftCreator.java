@@ -190,21 +190,19 @@ public class CraftCreator {
 			try {
 			CraftFloat cF = Reader.ReadFloatData(); //le os valores do oficio float
 			craftAdress cA = Reader.readCraftAdress(); //le os valores do endereço
+			Loader.AddCraftNumber();
 			CraftAuto a = Reader.ReadAutoData(); //le os valores do oficio automatizado
 			CraftStatic cS = Reader.ReadStaticData(); //le os valores do oficio estatico
 			
 			Loader.writeCraftFloat(toplaceType,toPlaceNumber,toName,toPlaceName,reason,meetingTime,dayCraft,monthCraft); 
 			cF = Reader.ReadFloatData();
 			CraftCreator.CraftCreate(cF, cA, cS, a); //cria e escreve o oficio
-			Loader.AddCraftNumber();
+			System.out.println("OFICIO nº"+ a.getCraftNumber()+" Criado!");
 			System.out.printf("1-Deseja criar um novo oficio?\n2-Deseja deletar este oficio?");
 			int opcao = sc.nextInt();
 			sc.nextLine();
 			switch(opcao) {
 			case 1:  CraftChangeFloat(toplaceType,toPlaceNumber,toName,toPlaceName,reason,meetingTime,dayCraft,monthCraft,sc);
-				
-				
-				
 				break;
 				
 			case 2: 
@@ -232,10 +230,10 @@ public class CraftCreator {
 			opcao = sc.nextLine().charAt(0);
 			if (opcao == 's') {
 			int choice = 0;
-			while (choice != 8) {
+			while (choice != 9) {
 			System.out.println("O que deseja Mudar?");
 			System.out.printf("\n1-Mudar Tipo\n2-Mudar Numero do Localn3-Mudar Nome do MC/VM/PESSOA"
-			+ "\n4-Mudar Assunto da Reunião\n 5-Mudar Horario da Reunião\n6-Mudar Dia da Reunião\n7-Mudar Mês\n8-Criar Oficio");
+			+ "\n4-Mudar Assunto da Reunião\n 5-Mudar Horario da Reunião\n6-Mudar Dia da Reunião\n7-Mudar Mês\n8-Criar Oficio\n9-Parar");
 			choice = sc.nextInt();
 			sc.nextLine();
 			switch (choice) {
@@ -246,7 +244,8 @@ public class CraftCreator {
 			case 5: meetingTime = CraftMenu.ChangeTo(choice,sc); break;
 			case 6: dayCraft = CraftMenu.ChangeTo(choice,sc); break;
 			case 7: monthCraft = CraftMenu.ChangeTo(choice,sc); break;
-			case 8: UserCraftCreator(toplaceType,toPlaceNumber,toName,toPlaceName,reason,meetingTime,dayCraft,monthCraft, sc);
+			case 8: System.out.println("Oficio Criado!");
+				UserCraftCreator(toplaceType,toPlaceNumber,toName,toPlaceName,reason,meetingTime,dayCraft,monthCraft, sc); break;
 			}
 			}
 				

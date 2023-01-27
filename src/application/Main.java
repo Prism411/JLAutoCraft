@@ -18,7 +18,7 @@ import services.Reader;
 public class Main {
 
 	public static void main(String[] args)  {
-		int opcao = 0, toPlaceNumber = 0;
+		int opcao = 0, toPlaceNumber = 0, choice = 0;
 		PlaceType pT = null;
 		String toName,toPlaceName,reason,meetingTime,dayCraft,monthCraft;
 		Scanner sc = new Scanner(System.in);
@@ -32,15 +32,12 @@ public class Main {
 		
 		switch (opcao) {
 		
-		case 1: 
-		System.out.println("Qual o tipo de oficio a ser criado?");
-		System.out.println("1-Capitulos (Irmãos)");
-		System.out.println("2-Betheis (Primas)");
-		System.out.println("3-Lojas (Tios)");
-		System.out.println("4-Pessoa (Pessoa Comum)");
-		System.out.println("5-Permissão de Loja (Tios/Loja Patrocinadora)");
-		int choice = sc.nextInt();
-		sc.nextLine();
+		case 1:
+		
+		case 2: 
+	
+		choice = CraftMenu.ChoiceCreator(sc);
+
 		pT = CraftMenu.ChooseType(choice, pT);
 	
 		toPlaceName = CraftMenu.toPName(sc);
@@ -61,10 +58,14 @@ public class Main {
 
 		break;
 		
-		case 2:
+		case 3: // Inserir dados p/ CraftAdress
+			break;
+		
+		case 4: //mudar dados sobre loja patrocinadora do capitulo
+			break;
 			
-			
-			
+		case 5: //aqui muda os dados sobre a gestão (CraftStatic)
+			break;	
 			
 		}
 		

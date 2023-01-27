@@ -7,7 +7,6 @@ import entities.PlaceType;
 
 public class CraftMenu {
 	
-	
 	public static PlaceType ChooseType(int choice,PlaceType pT) {
 	switch (choice) {
 	case 1: System.out.println("Irmãos Selecionado!");
@@ -106,6 +105,16 @@ public class CraftMenu {
 		
 		return word;
 }
-	
+	public static int ChoiceCreator(Scanner sc) {
+		System.out.println("Qual o tipo de oficio a ser criado?");
+		System.out.println("1-Capitulos (Irmãos)");
+		System.out.println("2-Betheis (Primas)");
+		System.out.println("3-Lojas (Tios)");
+		System.out.println("4-Pessoa (Pessoa Comum)");
+		System.out.println("5-Permissão de Loja (Tios/Loja Patrocinadora)");
+		int choice = sc.nextInt();
+		sc.nextLine();
+		return choice;
+	}
 	
 }
