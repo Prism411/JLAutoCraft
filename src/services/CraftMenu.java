@@ -66,6 +66,7 @@ public class CraftMenu {
 	@SuppressWarnings("unused")
 	public static String ChangeTo(int choice, Scanner sc) {
 		PlaceType pt=null;
+		String word = "Nulo";
 		int toPlaceNumber=0;
 		switch (choice){
 		
@@ -84,12 +85,26 @@ public class CraftMenu {
 			System.out.println("Entre com o novo Numero do Capitulo");
 			String num = sc.nextLine();
 			return num;
-		
+		case 3: System.out.println("Entre com o novo Numero do Capitulo");
+		word = sc.nextLine();
+		return word;
+		case 4: System.out.println("Entre com o novo Numero do Capitulo");
+		word = sc.nextLine();
+		return word;
+		case 5: System.out.println("Entre com o novo Numero do Capitulo");
+		word = sc.nextLine();
+		return word;
+		case 6: System.out.println("Entre com o novo Numero do Capitulo");
+		word = sc.nextLine();
+		return word;
+		case 7: System.out.println("Entre com o novo Numero do Capitulo");
+		word = sc.nextLine();
+		return word;
 		}
 		
 		
 		
-		return null;
+		return word;
 }
 	
 	

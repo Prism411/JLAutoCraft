@@ -26,7 +26,7 @@ public class Main {
 		while (sucess == false) {
 		try {
 		while (opcao !=5) {
-			System.out.printf("\t\t\tJLAUTOCRAFT MENU 0.1\n1-Novo Oficio\n2-Mudar Endereço\n3-Mudar Loja Patrocinadora\n4-Mudar dados da gestão\n5-Sair");
+			System.out.printf("\t\t\tJLAUTOCRAFT MENU 0.1\n1-Criar Oficio a partir do Banco de dados\n2-Novo Oficio do ZERO\n3-Mudar Endereço\n4-Mudar Loja Patrocinadora\n5-Mudar dados da gestão\n6-Sair");
 			opcao = sc.nextInt();
 			sucess = true;
 		
