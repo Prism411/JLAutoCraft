@@ -31,8 +31,8 @@ public class PlaceData {
 	}
 	@Override
 	public String toString() {
-		return "PlaceData [pT=" + pT + ", toPlaceNumber=" + toPlaceNumber + ", toPlaceName=" + toPlaceName + ", toName="
-				+ toName + "]";
+		return " [Tipo do Lugar =" + pT + ", Nome do Lugar =" + toPlaceName + ", Numero do Lugar = " + toPlaceNumber + ", Nome do MC/VM/ETC..="
+				+ toName + "] ";
 	}
 	public PlaceData(PlaceType pT, int toPlaceNumber, String toPlaceName, String toName) {
 		this.pT = pT;

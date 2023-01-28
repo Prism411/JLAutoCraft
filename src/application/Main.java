@@ -29,9 +29,8 @@ public class Main {
 		
 		switch (opcao) {
 		
-		case 1: choice = CraftMenu.ChoiceCreatorToDatabase(sc);
-		pT = CraftMenu.ChooseType(choice, pT);
-		DatabaseService.DatabaseSelector(pT,sc);
+		case 1: 
+		DatabaseService.DatabaseSelector(sc);
 		break;
 		
 		case 2: 
