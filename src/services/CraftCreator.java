@@ -232,19 +232,20 @@ public class CraftCreator {
 			int choice = 0;
 			while (choice != 9) {
 			System.out.println("O que deseja Mudar?");
-			System.out.printf("\n1-Mudar Tipo\n2-Mudar Numero do Localn3-Mudar Nome do MC/VM/PESSOA"
-			+ "\n4-Mudar Assunto da Reunião\n5-Mudar Horario da Reunião\n6-Mudar Dia da Reunião\n7-Mudar Mês\n8-Criar Oficio\n9-Parar");
+			System.out.printf("\n1-Mudar Tipo\n2-Mudar Nome do Local\n3-Mudar Numero do Local\n4-Mudar Nome do MC/VM/PESSOA"
+			+ "\n5-Mudar Assunto da Reunião\n6-Mudar Horario da Reunião\n7-Mudar Dia da Reunião\n8-Mudar Mês\n9-Criar Oficio\n10-Parar");
 			choice = sc.nextInt();
 			sc.nextLine();
 			switch (choice) {
 			case 1: toplaceType = PlaceType.valueOf(CraftMenu.ChangeTo(choice,sc)); break;
-			case 2: toPlaceNumber =  Integer.parseInt(CraftMenu.ChangeTo(choice,sc)); break;
-			case 3: toName = CraftMenu.ChangeTo(choice,sc); break;
-			case 4: reason = CraftMenu.ChangeTo(choice,sc); break;
-			case 5: meetingTime = CraftMenu.ChangeTo(choice,sc); break;
-			case 6: dayCraft = CraftMenu.ChangeTo(choice,sc); break;
-			case 7: monthCraft = CraftMenu.ChangeTo(choice,sc); break;
-			case 8: System.out.println("Oficio Criado!");
+			case 2: toPlaceName = CraftMenu.toPName(sc);
+			case 3: toPlaceNumber =  Integer.parseInt(CraftMenu.ChangeTo(choice,sc)); break;
+			case 4: toName = CraftMenu.ChangeTo(choice,sc); break;
+			case 5: reason = CraftMenu.ChangeTo(choice,sc); break;
+			case 6: meetingTime = CraftMenu.ChangeTo(choice,sc); break;
+			case 7: dayCraft = CraftMenu.ChangeTo(choice,sc); break;
+			case 8: monthCraft = CraftMenu.ChangeTo(choice,sc); break;
+			case 9: System.out.println("Oficio Criado!");
 				UserCraftCreator(toplaceType,toPlaceNumber,toName,toPlaceName,reason,meetingTime,dayCraft,monthCraft, sc); break;
 
 			}

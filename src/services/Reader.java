@@ -1,7 +1,6 @@
 package services;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -120,8 +119,6 @@ public class Reader {
 		return cA;
 		
 		}
-		
-	
 	public static craftAdress readCraftAdress() {
 		String path = "c:\\temp\\CraftAdress.txt";
 		craftAdress cA = null;
@@ -135,5 +132,6 @@ public class Reader {
 }
 	return cA;
 	}
+
 }
 	

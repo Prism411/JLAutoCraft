@@ -6,7 +6,7 @@ import java.util.Scanner;
 import entities.PlaceType;
 
 public class CraftMenu {
-	
+	//CraftFloat Begin
 	public static PlaceType ChooseType(int choice,PlaceType pT) {
 	switch (choice) {
 	case 1: System.out.println("Irmãos Selecionado!");
@@ -105,6 +105,9 @@ public class CraftMenu {
 		
 		return word;
 }
+	//CraftFloat End
+	//
+	//MenuFunc to get PlaceType
 	public static int ChoiceCreator(Scanner sc) {
 		System.out.println("Qual o tipo de oficio a ser criado?");
 		System.out.println("1-Capitulos (Irmãos)");
@@ -127,6 +130,7 @@ public class CraftMenu {
 	}
 	
 	
+	//CraftStatic Begin
 	public static int ManagementNumber(Scanner sc) {
 		System.out.println("Numero do semestre da gestão (1-2)");
 		int toPlaceNumber = sc.nextInt();
@@ -163,7 +167,6 @@ public class CraftMenu {
 		String answer = sc.nextLine();
 		return answer;
 	}
-		
-		
+	//CraftStatic End	
 	}
 

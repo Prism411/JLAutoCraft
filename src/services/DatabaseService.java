@@ -14,7 +14,9 @@ public class DatabaseService {
 			
 		case BETHEL: ifBethel(sc);break;
 			
-		case LOJA: ifLoja(sc); break;		
+		case LOJA: ifLoja(sc); break;
+		default: System.out.println("Só pode ser Capitulo,Bethel,ou Loja!");
+			break;		
 }
 
 
