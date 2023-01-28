@@ -30,6 +30,8 @@ public class Main {
 		switch (opcao) {
 		
 		case 1: 
+		choice = CraftMenu.ChoiceCreatorToDatabase(sc);
+		pT = CraftMenu.ChooseType(choice, pT);
 		DatabaseService.DatabaseSelector(sc);
 		break;
 		
@@ -76,7 +78,7 @@ public class Main {
 			//aqui muda os dados sobre a gestão (CraftStatic)
 			break;	
 		case 6: System.out.println("Adicionando nova Preset no banco de dados!");
-		choice = CraftMenu.ChoiceCreator(sc);
+		choice = CraftMenu.ChoiceCreatorToDatabase(sc);
 		pT = CraftMenu.ChooseType(choice, pT);
 		toPlaceName = CraftMenu.toPName(sc);
 		toPlaceNumber = CraftMenu.toPNumber(sc); sc.nextLine();

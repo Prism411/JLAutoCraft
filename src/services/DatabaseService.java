@@ -8,6 +8,22 @@ import entities.PlaceType;
 
 public class DatabaseService {
 	
+	public static void DatabaseTypeFilter(PlaceType pT, Scanner sc) {
+		switch (pT) {
+		
+		case CAPITULO:
+			
+		case LOJA:
+			
+		case BETHEL:
+		
+		
+		}
+		
+		
+		
+	}
+	
 
 	public static void DatabaseSelector(Scanner sc) {
 		

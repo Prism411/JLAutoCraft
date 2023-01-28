@@ -120,12 +120,23 @@ public class CraftMenu {
 		return choice;
 	}
 	public static int ChoiceCreatorToDatabase(Scanner sc) {
+		int choice = 1;
+		Boolean sucess = false;
+		while (sucess == false) {
 		System.out.println("Qual o tipo de oficio a ser criado?");
 		System.out.println("1-Capitulos (Irmãos)");
 		System.out.println("2-Betheis (Primas)");
 		System.out.println("3-Lojas (Tios)");
-		int choice = sc.nextInt();
+		choice = sc.nextInt();
 		sc.nextLine();
+		if (choice > 1 && choice < 3)  {
+		    sucess = true;
+		}
+		else {
+		   sucess = false;
+		   System.out.println("tem que ser entre 1 e 3");
+		}
+		}
 		return choice;
 	}
 	
