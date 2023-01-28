@@ -85,7 +85,13 @@ public class Main {
 		toName = CraftMenu.toPersonName(sc);
 		PlaceDataHandler.CREATEToFile(pT,toPlaceNumber,toPlaceName, toName);
 			break;
-			
+		
+		case 7: System.out.println("Remover Preset no banco de dados!");
+		choice = CraftMenu.ChoiceCreatorToDatabase(sc);
+		pT = CraftMenu.ChooseType(choice, pT);
+		int index = DatabaseService.DatabaseTypeFilter(pT, sc);
+		DatabaseService.DataBaseRemove(index);
+		
 		}
 		
 		
