@@ -13,6 +13,7 @@ import services.Loader;
 public class Main {
 
 	public static void main(String[] args)  {
+
 		int opcao = 0, toPlaceNumber = 0, choice = 0;
 		PlaceType pT = null;
 		String toName,toPlaceName,reason,meetingTime,dayCraft,monthCraft;

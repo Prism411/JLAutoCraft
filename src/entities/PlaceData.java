@@ -1,15 +1,10 @@
 package entities;
 
 public class PlaceData {
+	private PlaceType pT;
 	private int toPlaceNumber;
 	private String toPlaceName;
 	private String toName;
-	
-	public PlaceData(int toPlaceNumber, String toPlaceName, String toName) {
-		this.toPlaceNumber = toPlaceNumber;
-		this.toPlaceName = toPlaceName;
-		this.toName = toName;
-	}
 	public int getToPlaceNumber() {
 		return toPlaceNumber;
 	}
@@ -28,10 +23,22 @@ public class PlaceData {
 	public void setToName(String toName) {
 		this.toName = toName;
 	}
+	public PlaceType getpT() {
+		return pT;
+	}
+	public void setpT(PlaceType pT) {
+		this.pT = pT;
+	}
 	@Override
 	public String toString() {
-		return "PlaceData [toPlaceNumber=" + toPlaceNumber + ", toPlaceName=" + toPlaceName + ", toName=" + toName
-				+ "]";
+		return "PlaceData [pT=" + pT + ", toPlaceNumber=" + toPlaceNumber + ", toPlaceName=" + toPlaceName + ", toName="
+				+ toName + "]";
+	}
+	public PlaceData(PlaceType pT, int toPlaceNumber, String toPlaceName, String toName) {
+		this.pT = pT;
+		this.toPlaceNumber = toPlaceNumber;
+		this.toPlaceName = toPlaceName;
+		this.toName = toName;
 	}
 	
 	

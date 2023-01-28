@@ -238,8 +238,8 @@ public class CraftCreator {
 			sc.nextLine();
 			switch (choice) {
 			case 1: toplaceType = PlaceType.valueOf(CraftMenu.ChangeTo(choice,sc)); break;
-			case 2: toPlaceName = CraftMenu.toPName(sc);
-			case 3: toPlaceNumber =  Integer.parseInt(CraftMenu.ChangeTo(choice,sc)); break;
+			case 2: toPlaceName = CraftMenu.toPName(sc); 
+			case 3: toPlaceNumber =  CraftMenu.toPNumber(sc); break;
 			case 4: toName = CraftMenu.ChangeTo(choice,sc); break;
 			case 5: reason = CraftMenu.ChangeTo(choice,sc); break;
 			case 6: meetingTime = CraftMenu.ChangeTo(choice,sc); break;

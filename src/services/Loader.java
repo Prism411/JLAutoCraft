@@ -6,19 +6,18 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-
 import java.time.LocalDate;
 
 import java.time.format.TextStyle;
+import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
+import entities.PlaceData;
 import entities.PlaceType;
 
-
-
 public class Loader {
-	
+
 	public static void writeCraftStatic(int managementNumber, String pccName, String escrvName, String mcName,
 			String mcContact, String fromChapterName, String fromChapterNumber) {
 		String path = "c:\\temp\\CraftStatic.txt";
@@ -40,9 +39,9 @@ public class Loader {
 			System.out.println("ERRO IO EXCEPTION");
 		}
 	}
-	
-	public static void writeCraftFloat(PlaceType toplaceType, int toPlaceNumber, String toName, String toPlaceName, String reason,
-			String meetingTime, String dayCraft, String monthCraft) {
+
+	public static void writeCraftFloat(PlaceType toplaceType, int toPlaceNumber, String toName, String toPlaceName,
+			String reason, String meetingTime, String dayCraft, String monthCraft) {
 		String path = "c:\\temp\\CraftFloat.txt";
 		String toPlaceType = toplaceType.name();
 		try (BufferedWriter bw = new BufferedWriter(new FileWriter(path))) {
@@ -62,7 +61,7 @@ public class Loader {
 			bw.newLine();
 			bw.write(monthCraft);
 			bw.close();
-			
+
 		} catch (IOException e) {
 			System.out.println("ERRO IO EXCEPTION");
 		}
@@ -80,8 +79,8 @@ public class Loader {
 			System.out.println("ERRO IO EXCEPTION");
 		}
 	}
-	
-	//AutoCraft Management
+
+	// AutoCraft Management
 	public static void CreateTodayDate() throws IOException {
 
 		// Obtém a data atual
@@ -102,51 +101,53 @@ public class Loader {
 		bw.flush();
 		bw.close();
 	}
+
 	public static void AddCraftNumber() throws IOException {
-		 // Abre o arquivo para leitura
-        Scanner scanner = new Scanner(new File("c:\\temp\\CraftNumber.txt"));
+		// Abre o arquivo para leitura
+		Scanner scanner = new Scanner(new File("c:\\temp\\CraftNumber.txt"));
 
-        // Lê a primeira linha do arquivo
-        String linha = scanner.nextLine();
+		// Lê a primeira linha do arquivo
+		String linha = scanner.nextLine();
 
-        // Fecha o arquivo
-        scanner.close();
+		// Fecha o arquivo
+		scanner.close();
 
-        // Converte a string lida para inteiro
-        int numero = Integer.parseInt(linha);
+		// Converte a string lida para inteiro
+		int numero = Integer.parseInt(linha);
 
-        // Adiciona 1 ao número
-        numero++;
+		// Adiciona 1 ao número
+		numero++;
 
-        // Escreve o novo número no arquivo
-        FileWriter writer = new FileWriter("c:\\temp\\CraftNumber.txt");
-        writer.write(Integer.toString(numero));
-        writer.close();
-    }
+		// Escreve o novo número no arquivo
+		FileWriter writer = new FileWriter("c:\\temp\\CraftNumber.txt");
+		writer.write(Integer.toString(numero));
+		writer.close();
+	}
+
 	public static void RemoveCraftNumber() throws IOException {
-		 // Abre o arquivo para leitura
-       Scanner scanner = new Scanner(new File("c:\\temp\\CraftNumber.txt"));
+		// Abre o arquivo para leitura
+		Scanner scanner = new Scanner(new File("c:\\temp\\CraftNumber.txt"));
 
-       // Lê a primeira linha do arquivo
-       String linha = scanner.nextLine();
+		// Lê a primeira linha do arquivo
+		String linha = scanner.nextLine();
 
-       // Fecha o arquivo
-       scanner.close();
+		// Fecha o arquivo
+		scanner.close();
 
-       // Converte a string lida para inteiro
-       int numero = Integer.parseInt(linha);
+		// Converte a string lida para inteiro
+		int numero = Integer.parseInt(linha);
 
-       // Adiciona 1 ao número
-       numero--;
+		// Adiciona 1 ao número
+		numero--;
 
-       // Escreve o novo número no arquivo
-       FileWriter writer = new FileWriter("c:\\temp\\CraftNumber.txt");
-       writer.write(Integer.toString(numero));
-       writer.close();
+		// Escreve o novo número no arquivo
+		FileWriter writer = new FileWriter("c:\\temp\\CraftNumber.txt");
+		writer.write(Integer.toString(numero));
+		writer.close();
 
-		
-	
-}
-	//AutoCraft Management
+	}
+	// AutoCraft Management
+
+
 }
 
