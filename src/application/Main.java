@@ -32,7 +32,7 @@ public class Main {
 		case 1: 
 		choice = CraftMenu.ChoiceCreatorToDatabase(sc);
 		pT = CraftMenu.ChooseType(choice, pT);
-		DatabaseService.DatabaseSelector(sc);
+		DatabaseService.DatabaseTypeFilter(pT, sc);
 		break;
 		
 		case 2: 

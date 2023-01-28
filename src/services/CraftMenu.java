@@ -129,7 +129,7 @@ public class CraftMenu {
 		System.out.println("3-Lojas (Tios)");
 		choice = sc.nextInt();
 		sc.nextLine();
-		if (choice > 1 && choice < 3)  {
+		if (choice >= 1 && choice <= 3)  {
 		    sucess = true;
 		}
 		else {
