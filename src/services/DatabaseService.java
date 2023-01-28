@@ -8,20 +8,22 @@ import entities.PlaceType;
 
 public class DatabaseService {
 
-	public static void DatabaseTypeFilter(PlaceType pT, Scanner sc) {
+	public static int DatabaseTypeFilter(PlaceType pT, Scanner sc) {
+		int index = 0;
 		switch (pT) {
 
-		case CAPITULO:DatabaseSelectorCAPITULO(sc); break;
+		case CAPITULO: index = DatabaseSelectorCAPITULO(sc); break;
 
-		case LOJA: DatabaseSelectorLOJA(sc); break;
+		case LOJA: 	 index = DatabaseSelectorLOJA(sc); break;
 
-		case BETHEL: DatabaseSelectorBETHEL(sc); break;
+		case BETHEL: index = DatabaseSelectorBETHEL(sc); break;
 
 		}
+		return index;
 
 	}
 
-	public static void DatabaseSelectorCAPITULO(Scanner sc) {
+	public static int DatabaseSelectorCAPITULO(Scanner sc) {
 
 		List<PlaceData> list = PlaceDataHandler.READFromFile();
 		int f = 0;
@@ -30,9 +32,12 @@ public class DatabaseService {
 			if(e.getpT() == PlaceType.CAPITULO) {
 		           System.out.printf("\n%d   - %s\n", f, e);}
 		}
+		System.out.println("SELECIONE PELO ID!");
+		int id = sc.nextInt(); sc.nextLine();
+		return id;
 	}
 	
-	public static void DatabaseSelectorLOJA(Scanner sc) {
+	public static int DatabaseSelectorLOJA(Scanner sc) {
 
 		List<PlaceData> list = PlaceDataHandler.READFromFile();
 		int f = 0;
@@ -41,9 +46,12 @@ public class DatabaseService {
 			if(e.getpT() == PlaceType.LOJA) {
 		           System.out.printf("\n%d   - %s\n", f, e);}
 		}
+		System.out.println("SELECIONE PELO ID!");
+		int id = sc.nextInt(); sc.nextLine();
+		return id;
 	}
 	
-	public static void DatabaseSelectorBETHEL(Scanner sc) {
+	public static int DatabaseSelectorBETHEL(Scanner sc) {
 
 		List<PlaceData> list = PlaceDataHandler.READFromFile();
 		int f = 0;
@@ -52,6 +60,9 @@ public class DatabaseService {
 			if(e.getpT() == PlaceType.BETHEL) {
 		           System.out.printf("\n%d   - %s\n", f, e);}
 		}
+		System.out.println("SELECIONE PELO ID!");
+		int id = sc.nextInt(); sc.nextLine();
+		return id;
 	}
 
 	public static void DatabaseSelector(Scanner sc) {
@@ -63,5 +74,13 @@ public class DatabaseService {
 			f++;
 		}
 
+
+	}
+
+	
+	public static void DataBaseRemove(int index) {
+		List<PlaceData> list = PlaceDataHandler.READFromFile();
+		list.remove(index);
+		PlaceDataHandler.WRITEListToFile(list);
 	}
 }

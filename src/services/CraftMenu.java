@@ -123,7 +123,7 @@ public class CraftMenu {
 		int choice = 1;
 		Boolean sucess = false;
 		while (sucess == false) {
-		System.out.println("Qual o tipo de oficio a ser criado?");
+		System.out.println("Qual o tipo do Lugar?");
 		System.out.println("1-Capitulos (Irmãos)");
 		System.out.println("2-Betheis (Primas)");
 		System.out.println("3-Lojas (Tios)");

@@ -22,8 +22,8 @@ public class Main {
 		boolean sucess = false;
 		while (sucess == false) {
 		try {
-		while (opcao !=7) {
-			System.out.printf("\t\t\tCRIADOR DE OFICIO DO CAPITULO PAULO ROBERTO DE AMORIM MENU 0.1\n1-Criar Oficio a partir do Banco de dados\n2-Novo Oficio do ZERO\n3-Mudar Endereço\n4-Mudar Loja Patrocinadora\n5-Mudar dados da gestão\n6-Adicionar no Banco de dados\n7-Sair");
+		while (opcao !=8) {
+			System.out.printf("\t\t\tCRIADOR DE OFICIO DO CAPITULO PAULO ROBERTO DE AMORIM MENU 0.1\n1-Criar Oficio a partir do Banco de dados\n2-Novo Oficio do ZERO\n3-Mudar Endereço\n4-Mudar Loja Patrocinadora\n5-Mudar dados da gestão\n6-Adicionar no Banco de dados\n7-Remover do banco de dados\n8-Sair");
 			opcao = sc.nextInt(); sc.nextLine();
 			sucess = true;
 		
