@@ -66,7 +66,8 @@ public static void WRITEListToFile(List<PlaceData> placeDataList) {
 
 //adiciona essa linha lá
 		//PlaceDataHandler.CREATEToFile(PlaceType.CAPITULO, 3, "oi", "oi");
-		//cria a lista
+		
+		//cria a lista para USO
 		//List<PlaceData> list = PlaceDataHandler.READFromFile();
 		//faz alteração X
 		//list.remove(0);
