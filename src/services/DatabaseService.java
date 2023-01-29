@@ -9,7 +9,7 @@ import entities.PlaceType;
 public class DatabaseService {
 
 	public static int DatabaseTypeFilter(PlaceType pT, Scanner sc) {
-		int index = 0;
+		int index = -1;
 		switch (pT) {
 
 		case CAPITULO: index = DatabaseSelectorCAPITULO(sc); break;
@@ -26,7 +26,7 @@ public class DatabaseService {
 	public static int DatabaseSelectorCAPITULO(Scanner sc) {
 
 		List<PlaceData> list = PlaceDataHandler.READFromFile();
-		int f = 0;
+		int f = -1;
 		for (PlaceData e : list) {
 			f++;
 			if(e.getpT() == PlaceType.CAPITULO) {
@@ -40,7 +40,7 @@ public class DatabaseService {
 	public static int DatabaseSelectorLOJA(Scanner sc) {
 
 		List<PlaceData> list = PlaceDataHandler.READFromFile();
-		int f = 0;
+		int f = -1;
 		for (PlaceData e : list) {
 			f++;
 			if(e.getpT() == PlaceType.LOJA) {
@@ -54,7 +54,7 @@ public class DatabaseService {
 	public static int DatabaseSelectorBETHEL(Scanner sc) {
 
 		List<PlaceData> list = PlaceDataHandler.READFromFile();
-		int f = 0;
+		int f = -1;
 		for (PlaceData e : list) {
 			f++;
 			if(e.getpT() == PlaceType.BETHEL) {
@@ -68,7 +68,7 @@ public class DatabaseService {
 	public static void DatabaseSelector(Scanner sc) {
 
 		List<PlaceData> list = PlaceDataHandler.READFromFile();
-		int f = 0;
+		int f = -1;
 		for (PlaceData e : list) {
 			System.out.printf("\n%d   - %s\n", f, e);
 			f++;
