@@ -80,23 +80,27 @@ public class CraftMenu {
 		sc.nextLine();
 		 pt = ChooseType(opcao,pt);
 		return pt.toString();  
-		case 2:
+		case 2: 
+		System.out.println("Entre com o novo Nome do Lugar");
+		word = sc.nextLine(); 
+		return word;
+		case 3:
 			System.out.println("Entre com o novo Numero do Capitulo");
 			String num = sc.nextLine();
 			return num;
-		case 3: System.out.println("Entre com o novo nome da Pessoa");
+		case 4: System.out.println("Entre com o novo nome da Pessoa");
 		word = sc.nextLine();
 		return word;
-		case 4: System.out.println("Entre com o novo Assunto");
+		case 5: System.out.println("Entre com o novo Assunto");
 		word = sc.nextLine();
 		return word;
-		case 5: System.out.println("Entre com o novo horario");
+		case 6: System.out.println("Entre com o novo horario");
 		word = sc.nextLine();
 		return word;
-		case 6: System.out.println("Entre com o novo dia da reuniao");
+		case 7: System.out.println("Entre com o novo dia da reuniao");
 		word = sc.nextLine();
 		return word;
-		case 7: System.out.println("Entre com o novo mes");
+		case 8: System.out.println("Entre com o novo mes");
 		word = sc.nextLine();
 		return word;
 		}

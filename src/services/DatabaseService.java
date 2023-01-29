@@ -3,6 +3,7 @@ package services;
 import java.util.List;
 import java.util.Scanner;
 
+import entities.CraftFloat;
 import entities.PlaceData;
 import entities.PlaceType;
 
@@ -82,5 +83,22 @@ public class DatabaseService {
 		List<PlaceData> list = PlaceDataHandler.READFromFile();
 		list.remove(index);
 		PlaceDataHandler.WRITEListToFile(list);
+	}
+	
+	public static void CallDataBaseCreator(int index, Scanner sc) {
+		List<PlaceData> list = PlaceDataHandler.READFromFile();
+		FromDataBaseCreator(index,sc,list);
+	}
+	 
+	private static void FromDataBaseCreator(int index, Scanner sc, List<PlaceData> list) {
+		PlaceData pD = list.get(index);
+		System.out.println(pD);
+		String reason = CraftMenu.toReason(sc);
+		String meetingTime = CraftMenu.toMeetingTime(sc);
+		String dayCraft = CraftMenu.toDayDate(sc);
+		String monthCraft = CraftMenu.toMonthDate(sc);
+
+		CraftCreator.UserCraftCreator(pD.getpT(),pD.getToPlaceNumber(), pD.getToName(),pD.getToPlaceName(), reason, meetingTime, dayCraft, monthCraft, sc);
+		
 	}
 }

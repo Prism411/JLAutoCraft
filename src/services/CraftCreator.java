@@ -137,7 +137,7 @@ public class CraftCreator {
 	        office.append("Porto Velho, Rondônia.\n\n");
 	        office.append(String.format("%65s%s\n\n", "Assunto: ", craftfloat.getReason()));
 	        office.append("           Querido "+craftfloat.getToName()+",\n");
-	        office.append("           Nós, do " + craftfloat.getToName() + ", convidamos a Vossa Pessoa para a nossa Reunião Ritualística com a seguinte pauta: " + craftfloat.getReason() + ". Ocorrerá no dia " + craftfloat.getDayCraft() + " de " + craftfloat.getMonthCraft() + " de " + craftauto.getCraftYear() + ", às " + craftfloat.getMeetingTime() + ", na Loja Maçônica "+ craftadress.getSponsorShop()+ " nº " + craftadress.getSponsorShopNumber() + ", localizado na " + craftadress.getAdress() + ".\n");
+	        office.append("           Nós, do Capítulo" + craftstatic.getFromChapterName()+ ", convidamos a Vossa Pessoa para a nossa Reunião Ritualística com a seguinte pauta: " + craftfloat.getReason() + ". Ocorrerá no dia " + craftfloat.getDayCraft() + " de " + craftfloat.getMonthCraft() + " de " + craftauto.getCraftYear() + ", às " + craftfloat.getMeetingTime() + ", na Loja Maçônica "+ craftadress.getSponsorShop()+ " nº " + craftadress.getSponsorShopNumber() + ", localizado na " + craftadress.getAdress() + ".\n");
 	        office.append("           Sua presença é de suma importância para nós, visto que com a união podemos construir laços e fazer deste um mundo melhor para se viver.\n");
 	        office.append("Para quaisquer dúvidas, contatem o Irmão Mestre Conselheiro do Capítulo " + craftstatic.getMcName() + ". (Contato: " + craftstatic.getMcContact() + ").\n");
 	        office.append("           Sendo isso para o momento, aproveitamos para reiterar as afirmações da mais elevada estima e distinta consideração.\n");
@@ -185,6 +185,7 @@ public class CraftCreator {
 		        }
 		    }
 	    
+	    //essa função cria o oficio automaticamente só colocando essas informações
 		public static void UserCraftCreator(PlaceType toplaceType, int toPlaceNumber, String toName, String toPlaceName, String reason,
 				String meetingTime, String dayCraft, String monthCraft, Scanner sc) {
 			try {
@@ -226,9 +227,16 @@ public class CraftCreator {
 		public static void CraftChangeFloat(PlaceType toplaceType, int toPlaceNumber, String toName, String toPlaceName, String reason,
 				String meetingTime, String dayCraft, String monthCraft, Scanner sc) {
 			char opcao;
-			System.out.println("Deseja Mudar algo? (s/n)");
+			System.out.println("Deseja pegar do banco de dados um lugar pré-configurado (s/n) ? ");
 			opcao = sc.nextLine().charAt(0);
 			if (opcao == 's') {
+				
+				PlaceType pT = toplaceType;
+				int choice = CraftMenu.ChoiceCreatorToDatabase(sc);
+				pT = CraftMenu.ChooseType(choice, pT);
+				DatabaseService.DatabaseTypeFilter(pT, sc);
+				
+			}else {
 			int choice = 0;
 			while (choice != 9) {
 			System.out.println("O que deseja Mudar?");
@@ -238,7 +246,7 @@ public class CraftCreator {
 			sc.nextLine();
 			switch (choice) {
 			case 1: toplaceType = PlaceType.valueOf(CraftMenu.ChangeTo(choice,sc)); break;
-			case 2: toPlaceName = CraftMenu.toPName(sc); 
+			case 2: toPlaceName = CraftMenu.toPName(sc); break;
 			case 3: toPlaceNumber =  CraftMenu.toPNumber(sc); break;
 			case 4: toName = CraftMenu.ChangeTo(choice,sc); break;
 			case 5: reason = CraftMenu.ChangeTo(choice,sc); break;
@@ -247,19 +255,8 @@ public class CraftCreator {
 			case 8: monthCraft = CraftMenu.ChangeTo(choice,sc); break;
 			case 9: System.out.println("Oficio Criado!");
 				UserCraftCreator(toplaceType,toPlaceNumber,toName,toPlaceName,reason,meetingTime,dayCraft,monthCraft, sc); break;
-
+			case 10: break;
 			}
-			}
-				
-			
-			
-			
-			
-			
-			
-				
-
-			} else {UserCraftCreator(toplaceType, toPlaceNumber, toName, toPlaceName, reason, meetingTime, dayCraft, monthCraft, sc);	
 			}
 			
 		}
@@ -267,7 +264,7 @@ public class CraftCreator {
 
 	    
 	    
-	}
+		}}
 
 
 	
