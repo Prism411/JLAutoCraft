@@ -32,7 +32,7 @@ public class Main {
 		case 1: //toDatabase
 			
 		choice = CraftMenu.ChoiceCreatorToDatabase(sc);
-		pT = CraftMenu.ChooseType(choice, pT);
+		pT = CraftMenu.ChooseType(choice, pT,sc);
 		index =DatabaseService.DatabaseTypeFilter(pT, sc);
 		DatabaseService.CallDataBaseCreator(index, sc);
 		index = 0;
@@ -43,18 +43,7 @@ public class Main {
 	
 		choice = CraftMenu.ChoiceCreator(sc);
 
-		pT = CraftMenu.ChooseType(choice, pT);
-		
-		if (pT == PlaceType.PESSOA) {
-			System.out.println("PESSOA selecionado!");
-			toName = CraftMenu.toPersonName(sc);
-			reason = CraftMenu.toReason(sc);
-			meetingTime = CraftMenu.toMeetingTime(sc);
-			dayCraft = CraftMenu.toDayDate(sc);
-			monthCraft = CraftMenu.toMonthDate(sc);
-			CraftCreator.UserCraftCreator(pT, 0, toName, "0", reason, meetingTime, dayCraft, monthCraft, sc);	
-			break;
-		}
+		pT = CraftMenu.ChooseType(choice, pT,sc);
 	
 		toPlaceName = CraftMenu.toPName(sc);
 		
@@ -94,7 +83,7 @@ public class Main {
 			break;	
 		case 6: System.out.println("Adicionando nova Preset no banco de dados!");
 		choice = CraftMenu.ChoiceCreatorToDatabase(sc);
-		pT = CraftMenu.ChooseType(choice, pT);
+		pT = CraftMenu.ChooseType(choice, pT,sc);
 		toPlaceName = CraftMenu.toPName(sc);
 		toPlaceNumber = CraftMenu.toPNumber(sc); sc.nextLine();
 		toName = CraftMenu.toPersonName(sc);
@@ -103,7 +92,7 @@ public class Main {
 		
 		case 7: System.out.println("Remover Preset no banco de dados!");
 		choice = CraftMenu.ChoiceCreatorToDatabase(sc);
-		pT = CraftMenu.ChooseType(choice, pT);
+		pT = CraftMenu.ChooseType(choice, pT,sc);
 		index = DatabaseService.DatabaseTypeFilter(pT, sc);
 		DatabaseService.DataBaseRemove(index);
 		index = 0;

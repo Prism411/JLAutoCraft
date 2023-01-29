@@ -165,7 +165,7 @@ public class CraftCreator {
 		        office.append("Venerável Mestre,\n");
 		        office.append(craftfloat.getToPlaceName() + " nº " + craftfloat.getToPlaceNumber() + ", Porto Velho, Rondônia.\n\n");
 		        office.append("\t\t\t\t\t\t\tAssunto: Informativo quanto à Reunião Ritualística.\n");
-		        office.append("           Ao Ilustrissimo Senhor "+ craftfloat.getToName() + " Venerável Mestre \n");
+		        office.append("           Ao Ilustrissimo Senhor "+ craftfloat.getToName() + ", Venerável Mestre \n");
 		        office.append("           Nós, do Capitulo" + craftstatic.getFromChapterName() + ", vimos por meio deste informar à vossa senhoria que o Capítulo irá utilizar a loja das "+ craftfloat.getMeetingTime() + " às 21:00, por conta das seguintes pautas: " + craftfloat.getReason() + ". Que ocorrerão no dia " + craftfloat.getDayCraft() + " de " + craftfloat.getMonthCraft() + " de " + craftauto.getCraftYear() + ", às " + craftfloat.getMeetingTime() + ", na Loja Maçônica "+ craftadress.getSponsorShop()+ " nº " + craftadress.getSponsorShopNumber() + ", localizado na " + craftadress.getAdress() + ".\n");
 		        office.append("           Sua presença é de suma importância para nós, visto que com a união podemos construir laços e fazer deste um mundo melhor para se viver.\n");
 		        office.append("Para quaisquer dúvidas, contatem o Irmão Mestre Conselheiro do Capítulo " + craftstatic.getMcName() + ". (Contato: " + craftstatic.getMcContact() + ").\n");
@@ -233,8 +233,10 @@ public class CraftCreator {
 				
 				PlaceType pT = toplaceType;
 				int choice = CraftMenu.ChoiceCreatorToDatabase(sc);
-				pT = CraftMenu.ChooseType(choice, pT);
-				DatabaseService.DatabaseTypeFilter(pT, sc);
+				pT = CraftMenu.ChooseType(choice, pT,sc);
+				int numberIndex = DatabaseService.DatabaseTypeFilter(pT, sc);
+				DatabaseService.CallDataBaseCreator(numberIndex, sc);
+				numberIndex = 0;
 				
 			}else {
 			int choice = 0;

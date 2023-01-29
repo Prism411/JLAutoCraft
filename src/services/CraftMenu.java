@@ -1,13 +1,13 @@
 package services;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import entities.PlaceType;
+import entities.craftAdress;
 
 public class CraftMenu {
 	//CraftFloat Begin
-	public static PlaceType ChooseType(int choice,PlaceType pT) {
+	public static PlaceType ChooseType(int choice,PlaceType pT, Scanner sc) {
 	switch (choice) {
 	case 1: System.out.println("Irmãos Selecionado!");
 	pT = PlaceType.CAPITULO;
@@ -24,6 +24,13 @@ public class CraftMenu {
 	case 5: System.out.println("Tios/Loja Selecionado!");
 	pT = PlaceType.LodgePerm;
 	break;
+	}
+	if (pT == PlaceType.PESSOA) {
+		CraftMenu.CraftToperson(sc,pT);
+	}
+	
+	if (pT == PlaceType.LodgePerm) {
+		CraftMenu.CraftToLodgePerm(sc, pT);
 	}
 	return pT;
 }
@@ -78,7 +85,7 @@ public class CraftMenu {
 		System.out.println("5-Permissão de Loja (Tios/Loja Patrocinadora)");
 		int opcao = sc.nextInt();
 		sc.nextLine();
-		 pt = ChooseType(opcao,pt);
+		 pt = ChooseType(opcao,pt,sc);
 		return pt.toString();  
 		case 2: 
 		System.out.println("Entre com o novo Nome do Lugar");
@@ -133,7 +140,7 @@ public class CraftMenu {
 		System.out.println("3-Lojas (Tios)");
 		choice = sc.nextInt();
 		sc.nextLine();
-		if (choice >= 1 && choice <= 3)  {
+		if (choice >= 1 && choice <= 4)  {
 		    sucess = true;
 		}
 		else {
@@ -183,5 +190,51 @@ public class CraftMenu {
 		return answer;
 	}
 	//CraftStatic End	
+	
+	public static void CraftToperson(Scanner sc,PlaceType pT) {
+		System.out.println("PESSOA selecionado!");
+		String toName = CraftMenu.toPersonName(sc);
+		String reason = CraftMenu.toReason(sc);
+		String meetingTime = CraftMenu.toMeetingTime(sc);
+		String dayCraft = CraftMenu.toDayDate(sc);
+		String monthCraft = CraftMenu.toMonthDate(sc);
+		CraftCreator.UserCraftCreator(pT, 0, toName, "0", reason, meetingTime, dayCraft, monthCraft, sc);	
 	}
+	
+	public static void CraftToLodgePerm(Scanner sc, PlaceType pT) {
+		System.out.println("Deseja criar um oficio para a loja patrocinadora deste Capitulo? (s/n)");
+		char op = sc.nextLine().charAt(0);
+		switch (op) {
+		case 's': 
+			
+			craftAdress cA = Reader.readCraftAdress();
+			cA.getSponsorShop();
+			cA.getSponsorShopNumber();
 
+			String toName = CraftMenu.toPersonName(sc);
+			
+			String meetingTime = CraftMenu.toMeetingTime(sc);
+			
+			String dayCraft = CraftMenu.toDayDate(sc);
+			
+			String monthCraft = CraftMenu.toMonthDate(sc);
+
+			CraftCreator.UserCraftCreator(pT, cA.getSponsorShopNumber(), toName, cA.getSponsorShop(), "nulo", meetingTime, dayCraft, monthCraft, sc);
+			
+			break;
+		case 'n': 	
+		String toPlaceName = CraftMenu.toPName(sc);
+		int toPlaceNumber = CraftMenu.toPNumber(sc); sc.nextLine();	
+		toName = CraftMenu.toPersonName(sc);
+		meetingTime = CraftMenu.toMeetingTime(sc);	
+		dayCraft = CraftMenu.toDayDate(sc);
+		monthCraft = CraftMenu.toMonthDate(sc);
+		CraftCreator.UserCraftCreator(pT, toPlaceNumber, toName, toPlaceName, "nulo", meetingTime, dayCraft, monthCraft, sc);
+			
+			break;
+		
+		default: System.out.println("INSIRA S/N");
+		}
+}
+
+}
