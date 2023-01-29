@@ -23,7 +23,7 @@ public class Main {
 		while (sucess == false) {
 		try {
 		while (opcao !=8) {
-			System.out.printf("\t\t\tCRIADOR DE OFICIO DO CAPITULO PAULO ROBERTO DE AMORIM MENU 0.1\n1-Criar Oficio a partir do Banco de dados\n2-Novo Oficio do ZERO\n3-Mudar Endereço\n4-Mudar Loja Patrocinadora\n5-Mudar dados da gestão\n6-Adicionar no Banco de dados\n7-Remover do banco de dados\n8-Sair");
+			System.out.printf("\t\t\tCRIADOR DE OFICIO DO CAPITULO PAULO ROBERTO DE AMORIM MENU 0.1\n1-Criar Oficio a partir do Banco de dados\n2-Novo Oficio do ZERO\n3-Mudar Loja Patrocinadora\n4-Mudar dados da gestão\n5-Adicionar no Banco de dados\n6-Remover do banco de dados\n8-Sair");
 			opcao = sc.nextInt(); sc.nextLine();
 			sucess = true;
 		
@@ -64,13 +64,10 @@ public class Main {
 		System.out.println("cabo");
 		break;
 		
-		case 3: // Inserir dados p/ CraftAdress
-			break;
-		
-		case 4: //mudar dados sobre loja patrocinadora do capitulo
+		case 3: CraftMenu.ChangeCraftAdress(sc);
 			break;
 			
-		case 5: String capName = CraftMenu.CapName(sc);
+		case 4: String capName = CraftMenu.CapName(sc);
 				String CapNumber = CraftMenu.CapNumber(sc);
 				int ManagementNumber = CraftMenu.ManagementNumber(sc);
 				String McName = CraftMenu.McName(sc);
@@ -81,7 +78,7 @@ public class Main {
 				System.out.println("Informações Implementadas! REINICIANDO!!!");
 			//aqui muda os dados sobre a gestão (CraftStatic)
 			break;	
-		case 6: System.out.println("Adicionando nova Preset no banco de dados!");
+		case 5: System.out.println("Adicionando nova Preset no banco de dados!");
 		choice = CraftMenu.ChoiceCreatorToDatabase(sc);
 		pT = CraftMenu.ChooseType(choice, pT,sc);
 		toPlaceName = CraftMenu.toPName(sc);
@@ -90,7 +87,7 @@ public class Main {
 		PlaceDataHandler.CREATEToFile(pT,toPlaceNumber,toPlaceName, toName);
 			break;
 		
-		case 7: System.out.println("Remover Preset no banco de dados!");
+		case 6: System.out.println("Remover Preset no banco de dados!");
 		choice = CraftMenu.ChoiceCreatorToDatabase(sc);
 		pT = CraftMenu.ChooseType(choice, pT,sc);
 		index = DatabaseService.DatabaseTypeFilter(pT, sc);
