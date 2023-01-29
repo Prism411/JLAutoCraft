@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="300.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19">
+   <children>
+      <ComboBox layoutX="125.0" layoutY="138.0" prefWidth="150.0" AnchorPane.bottomAnchor="137.0" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="125.0" AnchorPane.topAnchor="138.0" />
+      <Label layoutX="117.0" layoutY="114.0" text="Insira o tipo do lugar do Oficio!" />
+   </children>
+</AnchorPane>
