@@ -9,11 +9,10 @@ import java.io.IOException;
 import java.time.LocalDate;
 
 import java.time.format.TextStyle;
-import java.util.List;
+
 import java.util.Locale;
 import java.util.Scanner;
 
-import entities.PlaceData;
 import entities.PlaceType;
 
 public class Loader {

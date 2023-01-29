@@ -3,7 +3,6 @@ package services;
 import java.util.List;
 import java.util.Scanner;
 
-import entities.CraftFloat;
 import entities.PlaceData;
 import entities.PlaceType;
 
@@ -24,8 +23,9 @@ public class DatabaseService {
 		case BETHEL:
 			index = DatabaseSelectorBETHEL(sc);
 			break;
-
+		default: break;
 		}
+
 		return index;
 
 	}
