@@ -27,14 +27,14 @@ public class CraftMenu {
 			break;
 		case 5:
 			System.out.println("Tios/Loja Selecionado!");
-			pT = PlaceType.LodgePerm;
+			pT = PlaceType.PERMISSAO;
 			break;
 		}
 		if (pT == PlaceType.PESSOA) {
 			CraftMenu.CraftToperson(sc, pT);
 		}
 
-		if (pT == PlaceType.LodgePerm) {
+		if (pT == PlaceType.PERMISSAO) {
 			CraftMenu.CraftToLodgePerm(sc, pT);
 		}
 		return pT;

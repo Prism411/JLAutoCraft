@@ -5,5 +5,5 @@ public enum PlaceType {
 	LOJA,
 	BETHEL,
 	PESSOA,
-	LodgePerm;
+	PERMISSAO;
 }

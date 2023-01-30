@@ -36,7 +36,7 @@ public class CraftCreator {
 		writeToPerson(craftfloat,craftadress,craftstatic,craftauto);
 		break;
 		
-		case LodgePerm:
+		case PERMISSAO:
 			PermissionToLodge(craftfloat,craftadress,craftstatic,craftauto);
 			break;
 		}
