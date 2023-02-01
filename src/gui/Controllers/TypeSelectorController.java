@@ -24,6 +24,17 @@ public class TypeSelectorController implements Initializable {
 
 	@FXML
 	private Button btReturn;
+	
+	private static PlaceType selectedPlaceType;
+	
+	
+	public void setSelectedPlaceType(PlaceType selectedPlaceType) {
+		TypeSelectorController.selectedPlaceType = selectedPlaceType;
+	}
+	
+	public static PlaceType getSelectedPlaceType() {
+		return selectedPlaceType;
+	}
 
 	public void onActionBtReturn() {
 		try {
@@ -41,25 +52,27 @@ public class TypeSelectorController implements Initializable {
 
 
 	public void onActionBtSelect() {
-		PlaceType selectedPlaceType = comboBox.getValue();
-		if (selectedPlaceType == null) {
-			System.out.println("Selected value cannot be used.");
-		} else {
-			try {
-				FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/UserInputView.fxml"));
-				AnchorPane newAnchorPane = loader.load();
-				UserInputController userInputController = loader.getController();
-				UserInputController.setSelectedPlaceType(selectedPlaceType);
-				Scene newScene = new Scene(newAnchorPane);
-				Stage stage = (Stage) btSelect.getScene().getWindow();
-				stage.setScene(newScene);
-				stage.show();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+		setSelectedPlaceType(comboBox.getValue());
+		  if (selectedPlaceType == null) {
+		    System.out.println("Selected value cannot be used.");
+		  } else {
+		    try {
+		      FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/UserInputView.fxml"));
+		      AnchorPane newAnchorPane = loader.load();
+		      UserInputController userInputController = loader.getController();
+		      if (userInputController != null) {
+		        Scene newScene = new Scene(newAnchorPane);
+		        Stage stage = (Stage) btSelect.getScene().getWindow();
+		        stage.setScene(newScene);
+		        stage.show();
+		      } else {
+		        System.out.println("UserInputController object is null.");
+		      }
+		    } catch (IOException e) {
+		      e.printStackTrace();
+		    }
+		  }
 		}
-
-	}
 
 
 	@Override
