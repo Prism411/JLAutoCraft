@@ -18,12 +18,17 @@ public class UserInputController implements Initializable {
 	@FXML private Label PlaceTypelabel;
 	
 	@FXML
-	private Button button;
+	private Button nextButton;
 	
 	@FXML
 	private TextField textField;
 	
+	@FXML private Button previousButton;
+	
+	protected int count = 0;
+	
 	private String value = "";
+	
 	
 	public String getValue() {
 		return value;
@@ -33,17 +38,58 @@ public class UserInputController implements Initializable {
 	}
 	
 	@FXML
-	private void onBtAction() {
-		 setValue(textField.getText());
-	    System.out.println(getValue());
+	private void onBtPreviousAction() {
+		if (count >= 0){
+			count--;
+		}
+		Insert();		
+	}
+	
+	private void Insert() {
+		switch (count) {
+		case 0: System.out.println("teste");
+			break;
+			
+		case 1: System.out.println("teste2");
+			break;
+			
+		case 2: System.out.println("teste3");
+			break;
+			
+		case 3: System.out.println("teste4");
+			break;
+			
+		case 4: System.out.println("teste5");
+			break;
+		
+		case 5: System.out.println("teste6");
+			break;
+			
+		case 6: System.out.println("teste7");
+			break;
+		}
+	}
+	
+	
+	
+	
+	@FXML
+	private void onBtNextAction() {
+		if (count <= 6){
+			count++;
+		}
+		Insert();
+		
 	}
 	
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+
 		System.out.println(TypeSelectorController.getSelectedPlaceType());
 		label.setText(getValue());
 		PlaceTypelabel.setText("Place Type Selecionado = " + TypeSelectorController.getSelectedPlaceType());
+		 label.setText("Entre com o Nome do Lugar");
 		
 	}
 
