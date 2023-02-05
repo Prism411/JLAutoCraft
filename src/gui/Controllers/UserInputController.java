@@ -46,26 +46,43 @@ public class UserInputController implements Initializable {
 	}
 	
 	private void Insert() {
+	@SuppressWarnings("unused")
+	String toName,toPlaceName,reason,meetingTime,dayCraft,monthCraft;
 		switch (count) {
-		case 0: System.out.println("teste");
+		case 0: 
+		label.setText("Entre com o Nome do Lugar");
+		toPlaceName = textField.getText();
+		System.out.println(toPlaceName);
 			break;
 			
-		case 1: System.out.println("teste2");
+		case 1: 
+		label.setText("Entre com o Nome do MC/VM/ETC..");
+		toName = textField.getText();
+		System.out.println(toName);
 			break;
 			
-		case 2: System.out.println("teste3");
+		case 2:
+		label.setText("Entre com o Nome do assunto");
+		reason = textField.getText();
+		System.out.println(reason);
 			break;
 			
-		case 3: System.out.println("teste4");
+		case 3:
+		label.setText("Entre com o horario da reunião");
+		meetingTime = textField.getText();
+		System.out.println(meetingTime);
 			break;
 			
-		case 4: System.out.println("teste5");
+		case 4: 
+		label.setText("Entre com o dia da reunião");
+		dayCraft = textField.getText();
+		System.out.println(dayCraft);
 			break;
 		
-		case 5: System.out.println("teste6");
-			break;
-			
-		case 6: System.out.println("teste7");
+		case 5: 
+		label.setText("Entre com o mes da reunião");
+		monthCraft = textField.getText();
+		System.out.println(monthCraft);
 			break;
 		}
 	}
@@ -75,7 +92,7 @@ public class UserInputController implements Initializable {
 	
 	@FXML
 	private void onBtNextAction() {
-		if (count <= 6){
+		if (count <= 5){
 			count++;
 		}
 		Insert();
