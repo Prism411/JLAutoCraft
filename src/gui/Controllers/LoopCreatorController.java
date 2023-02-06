@@ -1,14 +1,18 @@
 package gui.Controllers;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
+import entities.PlaceData;
 import entities.PlaceType;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import services.PlaceDataHandler;
 
 public class LoopCreatorController implements Initializable {
 	
@@ -89,9 +93,7 @@ public class LoopCreatorController implements Initializable {
 	
 	@FXML private ComboBox<PlaceType> boxPlaceType;
 	
-	
-	
-	
+	@FXML private ComboBox<PlaceData> list;
 	
 	
 	
@@ -107,7 +109,12 @@ public class LoopCreatorController implements Initializable {
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
+	List<PlaceData> lista = PlaceDataHandler.READFromFile();
+	for (PlaceData placedata : lista) {
+		System.out.println(lista);
+	}
+	list.getItems().addAll(lista);
+	boxPlaceType.getItems().addAll(PlaceType.values());
 		
 	}
 	
