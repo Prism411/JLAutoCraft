@@ -232,7 +232,7 @@ public class CraftMenu {
 		String meetingTime = CraftMenu.toMeetingTime(sc);
 		String dayCraft = CraftMenu.toDayDate(sc);
 		String monthCraft = CraftMenu.toMonthDate(sc);
-		CraftCreator.UserCraftCreator(pT, 0, toName, "0", reason, meetingTime, dayCraft, monthCraft, sc);
+		CraftCreator.UserCraftCreator(pT, 0, toName, "0", reason, meetingTime, dayCraft, monthCraft);
 	}
 
 	public static void CraftToLodgePerm(Scanner sc, PlaceType pT) {
@@ -256,7 +256,7 @@ public class CraftMenu {
 			String monthCraft = CraftMenu.toMonthDate(sc);
 
 			CraftCreator.UserCraftCreator(pT, cA.getSponsorShopNumber(), toName, cA.getSponsorShop(), reason,
-					meetingTime, dayCraft, monthCraft, sc);
+					meetingTime, dayCraft, monthCraft);
 
 			break;
 		case 'n':
@@ -269,7 +269,7 @@ public class CraftMenu {
 			dayCraft = CraftMenu.toDayDate(sc);
 			monthCraft = CraftMenu.toMonthDate(sc);
 			CraftCreator.UserCraftCreator(pT, toPlaceNumber, toName, toPlaceName, reason, meetingTime, dayCraft,
-					monthCraft, sc);
+					monthCraft);
 
 			break;
 

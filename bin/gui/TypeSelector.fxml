@@ -5,11 +5,11 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Controllers.TypeSelectorController">
+<AnchorPane maxHeight="720.0" maxWidth="1280.0" minHeight="300.0" minWidth="400.0" prefHeight="320.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Controllers.TypeSelectorController">
    <children>
       <ComboBox fx:id="comboBox" layoutX="125.0" layoutY="88.0" prefWidth="150.0" promptText="Selecione o Tipo" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="125.0" />
       <Label layoutX="117.0" layoutY="48.0" text="Insira o tipo do lugar do Oficio!" AnchorPane.leftAnchor="117.0" AnchorPane.rightAnchor="117.0" />
-      <Button fx:id="btSelect" layoutX="88.0" layoutY="182.0" mnemonicParsing="false" onAction="#onActionBtSelect" text="Selecionar!" AnchorPane.leftAnchor="88.0" />
-      <Button fx:id="btReturn" layoutX="221.0" layoutY="182.0" mnemonicParsing="false" onAction="#onActionBtReturn" prefHeight="25.0" prefWidth="142.0" text="Voltar para o Menu" AnchorPane.rightAnchor="37.0" />
+      <Button fx:id="btSelect" layoutX="275.0" layoutY="173.0" mnemonicParsing="false" onAction="#onActionBtSelect" text="Selecionar!" AnchorPane.rightAnchor="50.60000000000002" />
+      <Button fx:id="btReturn" layoutX="46.0" layoutY="173.0" mnemonicParsing="false" onAction="#onActionBtReturn" prefHeight="25.0" prefWidth="142.0" text="Voltar para o Menu" AnchorPane.leftAnchor="46.0" />
    </children>
 </AnchorPane>

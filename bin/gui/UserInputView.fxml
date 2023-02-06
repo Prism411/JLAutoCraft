@@ -5,12 +5,13 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Controllers.UserInputController">
+<AnchorPane maxHeight="720.0" maxWidth="1280.0" minHeight="300.0" minWidth="400.0" prefHeight="320.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Controllers.UserInputController">
    <children>
-    <TextField fx:id="textField" layoutX="126.0" layoutY="150.0" AnchorPane.leftAnchor="126.0" AnchorPane.rightAnchor="125.0" />
-      <Button fx:id="nextButton" layoutX="228.0" layoutY="192.0" mnemonicParsing="false" onAction="#onBtNextAction" text="BtNext" />
-      <Label fx:id="label" layoutX="122.0" layoutY="121.0" prefHeight="17.0" prefWidth="157.0" AnchorPane.leftAnchor="122.0" AnchorPane.rightAnchor="121.0" />
-      <Label fx:id="PlaceTypelabel" layoutX="123.0" layoutY="44.0" prefHeight="17.0" prefWidth="210.0" text="PlaceType Selecionado:" />
-      <Button fx:id="previousButton" layoutX="122.0" layoutY="192.0" mnemonicParsing="false" onAction="#onBtPreviousAction" text="BtPrevious" />
+    <TextField fx:id="textField" layoutX="126.0" layoutY="197.0" AnchorPane.leftAnchor="126.0" AnchorPane.rightAnchor="125.0" />
+      <Button fx:id="nextButton" layoutX="253.0" layoutY="236.0" mnemonicParsing="false" onAction="#onBtNextAction" text="BtNext" />
+      <Label fx:id="label" layoutX="48.0" layoutY="167.0" prefHeight="18.0" prefWidth="316.0" AnchorPane.leftAnchor="48.0" AnchorPane.rightAnchor="36.0" />
+      <Label fx:id="PlaceTypelabel" layoutX="94.0" layoutY="14.0" prefHeight="17.0" prefWidth="213.0" text="PlaceType Selecionado:" AnchorPane.leftAnchor="94.0" AnchorPane.rightAnchor="93.0" />
+      <Button fx:id="previousButton" layoutX="90.0" layoutY="236.0" mnemonicParsing="false" onAction="#onBtPreviousAction" text="BtPrevious" />
+      <Label fx:id="resultLabel" layoutX="122.0" layoutY="31.0" prefHeight="145.0" prefWidth="157.0" AnchorPane.leftAnchor="122.0" AnchorPane.rightAnchor="121.0" />
    </children>
 </AnchorPane>

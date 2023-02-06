@@ -83,7 +83,7 @@ public class Main extends Application {
 		
 		monthCraft = CraftMenu.toMonthDate(sc);
 
-		CraftCreator.UserCraftCreator(pT, toPlaceNumber, toName, toPlaceName, reason, meetingTime, dayCraft, monthCraft, sc);
+		CraftCreator.UserCraftCreator(pT, toPlaceNumber, toName, toPlaceName, reason, meetingTime, dayCraft, monthCraft);
 
 		System.out.println("cabo");
 		break;

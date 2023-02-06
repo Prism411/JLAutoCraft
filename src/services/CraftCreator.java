@@ -187,26 +187,19 @@ public class CraftCreator {
 	    
 	    //essa função cria o oficio automaticamente só colocando essas informações
 		public static void UserCraftCreator(PlaceType toplaceType, int toPlaceNumber, String toName, String toPlaceName, String reason,
-				String meetingTime, String dayCraft, String monthCraft, Scanner sc) {
+			String meetingTime, String dayCraft, String monthCraft) {
 			try {
+			Loader.writeCraftFloat(toplaceType,toPlaceNumber,toName,toPlaceName,reason,meetingTime,dayCraft,monthCraft); 
+			Loader.AddCraftNumber();
+			Loader.CreateTodayDate();
+			
 			CraftFloat cF = Reader.ReadFloatData(); //le os valores do oficio float
 			craftAdress cA = Reader.readCraftAdress(); //le os valores do endereço
-			Loader.AddCraftNumber();
 			CraftAuto a = Reader.ReadAutoData(); //le os valores do oficio automatizado
 			CraftStatic cS = Reader.ReadStaticData(); //le os valores do oficio estatico
-			
-			Loader.writeCraftFloat(toplaceType,toPlaceNumber,toName,toPlaceName,reason,meetingTime,dayCraft,monthCraft); 
-			cF = Reader.ReadFloatData();
 			CraftCreator.CraftCreate(cF, cA, cS, a); //cria e escreve o oficio
 			System.out.println("OFICIO nº"+ a.getCraftNumber()+" Criado!");
-			System.out.printf("1-Deseja criar um novo oficio?\n2-Deseja deletar este oficio?");
-			int opcao = sc.nextInt();
-			sc.nextLine();
-			switch(opcao) {
-			case 1:  CraftChangeFloat(toplaceType,toPlaceNumber,toName,toPlaceName,reason,meetingTime,dayCraft,monthCraft,sc);
-				break;
-				
-			case 2: 
+			/*
 				File file = new File("c:\\temp\\out"+a.getCraftNumber()+".txt");
 				if(file.delete()){
 				    System.out.println(file.getName() + " is deleted!");
@@ -215,13 +208,11 @@ public class CraftCreator {
 				}
 			Loader.RemoveCraftNumber();
 			break;
-			}
-			
-			
+			}*/
 			} catch (IOException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
-			
+			}		
 		}
 		
 		public static void CraftChangeFloat(PlaceType toplaceType, int toPlaceNumber, String toName, String toPlaceName, String reason,
@@ -256,7 +247,7 @@ public class CraftCreator {
 			case 7: dayCraft = CraftMenu.ChangeTo(choice,sc); break;
 			case 8: monthCraft = CraftMenu.ChangeTo(choice,sc); break;
 			case 9: System.out.println("Oficio Criado!");
-				UserCraftCreator(toplaceType,toPlaceNumber,toName,toPlaceName,reason,meetingTime,dayCraft,monthCraft, sc); break;
+				UserCraftCreator(toplaceType,toPlaceNumber,toName,toPlaceName,reason,meetingTime,dayCraft,monthCraft); break;
 			case 10: break;
 			}
 			}

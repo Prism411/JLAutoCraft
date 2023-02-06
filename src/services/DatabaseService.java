@@ -108,7 +108,7 @@ public class DatabaseService {
 		String dayCraft = CraftMenu.toDayDate(sc);
 		String monthCraft = CraftMenu.toMonthDate(sc);
 		CraftCreator.UserCraftCreator(pD.getpT(), pD.getToPlaceNumber(), pD.getToName(), pD.getToPlaceName(), reason,
-				meetingTime, dayCraft, monthCraft, sc);
+				meetingTime, dayCraft, monthCraft);
 
 	}
 }
