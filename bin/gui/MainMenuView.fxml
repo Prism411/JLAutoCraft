@@ -22,7 +22,7 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <Button layoutX="99.0" layoutY="100.0" mnemonicParsing="false" text="Criar um Oficio do banco de dados" AnchorPane.leftAnchor="99.0" AnchorPane.rightAnchor="99.0" />
+      <Button fx:id="bt1" layoutX="99.0" layoutY="100.0" mnemonicParsing="false" onAction="#onBt1Action" text="Criar um Oficio do banco de dados" AnchorPane.leftAnchor="99.0" AnchorPane.rightAnchor="99.0" />
       <Button fx:id="bt2" layoutX="99.0" layoutY="131.0" mnemonicParsing="false" onAction="#onBt2Action" text="Criar um Oficio do zero" AnchorPane.leftAnchor="99.0" AnchorPane.rightAnchor="99.0" />
       <Button layoutX="101.0" layoutY="160.0" mnemonicParsing="false" text="Mudar Loja Patrocinadora" AnchorPane.leftAnchor="101.0" AnchorPane.rightAnchor="97.0" />
       <Button layoutX="101.0" layoutY="190.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="202.0" text="Mudar dados da gestão" AnchorPane.leftAnchor="101.0" AnchorPane.rightAnchor="97.0" />

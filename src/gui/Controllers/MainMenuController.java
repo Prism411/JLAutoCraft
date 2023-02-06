@@ -41,6 +41,18 @@ public class MainMenuController implements Initializable{
 		}
 	}
 	
+	public void onBt1Action() {
+		try {
+		    AnchorPane newAnchorPane = FXMLLoader.load(getClass().getResource("/gui/LoopCreatorView.fxml"));
+		    Scene newScene = new Scene(newAnchorPane);
+		    Stage stage = (Stage) bt1.getScene().getWindow();
+		    stage.setScene(newScene);
+		    stage.show();
+		} catch (IOException e) {
+		    e.printStackTrace();
+		}
+	}
+	
 	
 	
 	

@@ -1,9 +1,20 @@
 package gui.Controllers;
 
-public class LoopCreatorController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import entities.PlaceType;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
+
+public class LoopCreatorController implements Initializable {
 	
 	private static String toName = "",toPlaceName= "",reason= "",meetingTime= "",dayCraft= "",monthCraft= "";
 	private static int toPlaceNumber = 0;
+	private static PlaceType selectedPlaceType;
 	public String getToName() {
 		return toName;
 	}
@@ -46,15 +57,58 @@ public class LoopCreatorController {
 	public void setToPlaceNumber(int toPlaceNumber) {
 		LoopCreatorController.toPlaceNumber = toPlaceNumber;
 	}
-	public LoopCreatorController(String toName, String toPlaceName, String reason, String meetingTime, String dayCraft,
-			String monthCraft, int toPlaceNumber) {
-		LoopCreatorController.toName = toName;
-		LoopCreatorController.toPlaceName = toPlaceName;
-		LoopCreatorController.reason = reason;
-		LoopCreatorController.meetingTime = meetingTime;
-		LoopCreatorController.dayCraft = dayCraft;
-		LoopCreatorController.monthCraft = monthCraft;
-		LoopCreatorController.toPlaceNumber = toPlaceNumber;
+
+
+	public void setSelectedPlaceType(PlaceType selectedPlaceType) {
+		LoopCreatorController.selectedPlaceType = selectedPlaceType;
+	}
+	public static PlaceType getSelectedPlaceType() {
+		return selectedPlaceType;
+	}
+	
+	@SuppressWarnings("unused")
+	@FXML private Button btCreateCraft; // ao apertar este botão o oficio é criado
+	
+	//declaracao de textfields.
+	
+	@FXML private TextField inputPlaceName;
+	
+	@FXML private TextField inputPlaceNumber;
+	
+	@FXML private TextField inputPlacePerson; //nome da pessoa que está na liderança do capitulo, bethel.. etc...
+	
+	@FXML private TextField inputReason;
+	
+	@FXML private TextField inputMeetingTime; //horario da reunião
+	
+	@FXML private TextField inputDay; // dia da reunião 
+	
+	@FXML private TextField inputMonth; // mes da reunião
+	
+	//declaracao das comboBoxes
+	
+	@FXML private ComboBox<PlaceType> boxPlaceType;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 
