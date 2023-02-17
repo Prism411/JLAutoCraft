@@ -112,7 +112,7 @@ public class LoopCreatorController implements Initializable {
 	day = inputDay.getText();
 	month = inputMonth.getText();
 	
-	labelShowResult.setText(String.format("Nome do lugar: %s\nNumero do Lugar %d\nNome da Pessoa: %s\nAssunto: %s\nHorario: %s\nDia: %s\nMês: %s",placeName,placeNumber,placePerson,reason,meetingTime,day,month));
+	labelShowResult.setText(String.format("Nome do lugar: %s\n\nNumero do Lugar %d\n\nNome da Pessoa: %s\n\nAssunto: %s\n\nHorario: %s\n\nDia: %s\n\nMês: %s",placeName,placeNumber,placePerson,reason,meetingTime,day,month));
 	}
 	
 	
