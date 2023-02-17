@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import services.PlaceDataHandler;
 
@@ -94,8 +95,25 @@ public class LoopCreatorController implements Initializable {
 	@FXML private ComboBox<PlaceType> boxPlaceType;
 	
 	@FXML private ComboBox<PlaceData> list;
+	//
+	@FXML private Label labelShowResult;
 	
+	public void onbtCreateCraftAction() { //cria o oficio 
+	String placeName,placePerson,reason,meetingTime,day,month;
+	int placeNumber;
 	
+	placeName = inputPlaceName.getText();
+	System.out.println(placeName);
+	placeNumber = Integer.parseInt(inputPlaceNumber.getText());
+	System.out.println(placeNumber);
+	placePerson = inputPlacePerson.getText();
+	reason = inputReason.getText();
+	meetingTime = inputMeetingTime.getText();
+	day = inputDay.getText();
+	month = inputMonth.getText();
+	
+	labelShowResult.setText(String.format("Nome do lugar: %s\nNumero do Lugar %d\nNome da Pessoa: %s\nAssunto: %s\nHorario: %s\nDia: %s\nMês: %s",placeName,placeNumber,placePerson,reason,meetingTime,day,month));
+	}
 	
 	
 	

@@ -86,6 +86,7 @@ public class Main extends Application {
 		CraftCreator.UserCraftCreator(pT, toPlaceNumber, toName, toPlaceName, reason, meetingTime, dayCraft, monthCraft);
 
 		System.out.println("cabo");
+			//endline aq
 		break;
 		
 		case 3: CraftMenu.ChangeCraftAdress(sc);
