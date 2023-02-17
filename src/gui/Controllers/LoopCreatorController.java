@@ -100,30 +100,44 @@ public class LoopCreatorController implements Initializable {
 	//
 	@FXML private Label labelShowResult;
 	
-	public void onbtCreateCraftAction() { //cria o oficio 
-	String placeName,placePerson,reason,meetingTime,day,month;
-	int placeNumber;
-
-	setSelectedPlaceType(boxPlaceType.getValue());
-		if (selectedPlaceType != null) {
-	   
-			placeName = inputPlaceName.getText();
-			placeNumber = Integer.parseInt(inputPlaceNumber.getText());
-			placePerson = inputPlacePerson.getText();
-			reason = inputReason.getText();
-			meetingTime = inputMeetingTime.getText();
-			day = inputDay.getText();
-			month = inputMonth.getText();
-			labelShowResult.setText(String.format("Nome do lugar: %s\n\nNumero do Lugar %d\n\nNome da Pessoa: %s\n\nAssunto: %s\n\nHorario: %s\n\nDia: %s\n\nMês: %s",placeName,placeNumber,placePerson,reason,meetingTime,day,month));
-	}else { 
-	//se selectedPlaceType for NULO emite um aviso!
-	Alerts.showAlert("AlertTitle","UM ERRO FOI ENCONTRADO!", "Voce Precisa Selecionar um PlaceType!", AlertType.ERROR);
-						//titulo, //cabeçalho //mensagem // tipo
+	
+	public void getInput() {
+		String placeName,placePerson,reason,meetingTime,day,month;
+		int placeNumber;
+		placeName = inputPlaceName.getText();
+		placeNumber = Integer.parseInt(inputPlaceNumber.getText());
+		placePerson = inputPlacePerson.getText();
+		reason = inputReason.getText();
+		meetingTime = inputMeetingTime.getText();
+		day = inputDay.getText();
+		month = inputMonth.getText();
+		labelShowResult.setText(String.format("Nome do lugar: %s\n\nNumero do Lugar %d\n\nNome da Pessoa: %s\n\nAssunto: %s\n\nHorario: %s\n\nDia: %s\n\nMês: %s",placeName,placeNumber,placePerson,reason,meetingTime,day,month));
 		
-
 	}
 	
+	public void onbtCreateCraftAction() { //cria o oficio 
+	PlaceData selectedPlaceData;
 	
+	selectedPlaceData = list.getValue();
+	if (selectedPlaceData == null) { //                primeiro IF
+		//então o programa correrá normalmente!
+		setSelectedPlaceType(boxPlaceType.getValue());
+		if (selectedPlaceType != null) {               //Segundo IF
+			getInput();
+			}		else {                           //Segundo IF
+	//se selectedPlaceType for NULO emite um aviso!
+				Alerts.showAlert("Alerta","UM ERRO FOI ENCONTRADO!", "Voce Precisa Selecionar um PlaceType!", AlertType.ERROR);
+			}
+	
+	} else {                                          // primeiro IF
+		//MODO AUTOMATICO!! 
+		System.out.println(selectedPlaceData.getToName());
+		System.out.println(selectedPlaceData.getToPlaceName());
+		System.out.println(selectedPlaceData.getToPlaceNumber());
+		System.out.println(selectedPlaceData.getpT());
+		System.out.println(selectedPlaceData.toString());
+	}
+		
 	}
 	
 	
