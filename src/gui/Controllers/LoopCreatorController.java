@@ -7,8 +7,10 @@ import java.util.ResourceBundle;
 
 import entities.PlaceData;
 import entities.PlaceType;
+import gui.util.Alerts;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -101,18 +103,27 @@ public class LoopCreatorController implements Initializable {
 	public void onbtCreateCraftAction() { //cria o oficio 
 	String placeName,placePerson,reason,meetingTime,day,month;
 	int placeNumber;
+
+	setSelectedPlaceType(boxPlaceType.getValue());
+		if (selectedPlaceType != null) {
+	   
+			placeName = inputPlaceName.getText();
+			placeNumber = Integer.parseInt(inputPlaceNumber.getText());
+			placePerson = inputPlacePerson.getText();
+			reason = inputReason.getText();
+			meetingTime = inputMeetingTime.getText();
+			day = inputDay.getText();
+			month = inputMonth.getText();
+			labelShowResult.setText(String.format("Nome do lugar: %s\n\nNumero do Lugar %d\n\nNome da Pessoa: %s\n\nAssunto: %s\n\nHorario: %s\n\nDia: %s\n\nMês: %s",placeName,placeNumber,placePerson,reason,meetingTime,day,month));
+	}else { 
+	//se selectedPlaceType for NULO emite um aviso!
+	Alerts.showAlert("AlertTitle","UM ERRO FOI ENCONTRADO!", "Voce Precisa Selecionar um PlaceType!", AlertType.ERROR);
+						//titulo, //cabeçalho //mensagem // tipo
+		
+
+	}
 	
-	placeName = inputPlaceName.getText();
-	System.out.println(placeName);
-	placeNumber = Integer.parseInt(inputPlaceNumber.getText());
-	System.out.println(placeNumber);
-	placePerson = inputPlacePerson.getText();
-	reason = inputReason.getText();
-	meetingTime = inputMeetingTime.getText();
-	day = inputDay.getText();
-	month = inputMonth.getText();
 	
-	labelShowResult.setText(String.format("Nome do lugar: %s\n\nNumero do Lugar %d\n\nNome da Pessoa: %s\n\nAssunto: %s\n\nHorario: %s\n\nDia: %s\n\nMês: %s",placeName,placeNumber,placePerson,reason,meetingTime,day,month));
 	}
 	
 	
@@ -135,6 +146,9 @@ public class LoopCreatorController implements Initializable {
 	boxPlaceType.getItems().addAll(PlaceType.values());
 		
 	}
+	
+	//Alerts.showAlert("AlertTitle",null, "Click", AlertType.INFORMATION);
+	 //titulo, //cabeçalho //mensagem // tipo
 	
 
 }
