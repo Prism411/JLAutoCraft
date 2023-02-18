@@ -101,43 +101,48 @@ public class LoopCreatorController implements Initializable {
 	@FXML private Label labelShowResult;
 	
 	
-	public void getInput() {
-		String placeName,placePerson,reason,meetingTime,day,month;
-		int placeNumber;
-		placeName = inputPlaceName.getText();
-		placeNumber = Integer.parseInt(inputPlaceNumber.getText());
-		placePerson = inputPlacePerson.getText();
-		reason = inputReason.getText();
-		meetingTime = inputMeetingTime.getText();
-		day = inputDay.getText();
-		month = inputMonth.getText();
-		labelShowResult.setText(String.format("Nome do lugar: %s\n\nNumero do Lugar %d\n\nNome da Pessoa: %s\n\nAssunto: %s\n\nHorario: %s\n\nDia: %s\n\nMês: %s",placeName,placeNumber,placePerson,reason,meetingTime,day,month));
+	public void getInput(String placeName, String placePerson,String reason,String meetingTime,String day,String month, int placeNumber) {
+			placeName = inputPlaceName.getText();
+			placeNumber = Integer.parseInt(inputPlaceNumber.getText());
+			placePerson = inputPlacePerson.getText();
+			reason = inputReason.getText();
+			meetingTime = inputMeetingTime.getText();
+			day = inputDay.getText();
+			month = inputMonth.getText();
+			labelShowResult.setText(String.format("Nome do lugar: %s\n\nNumero do Lugar %d\n\nNome da Pessoa: %s\n\nAssunto:"
+					+ " %s\n\nHorario: %s\n\nDia: %s\n\nMês: %s",placeName,placeNumber,placePerson,reason,meetingTime,day,month));			
+	}
+	
+	public void onComboBoxAction() {
+		PlaceData selectedPlaceData = list.getValue(); 
+		//setToName(selectedPlaceData.getToName());
+		//setToPlaceNumber(selectedPlaceData.getToPlaceNumber());
+		//setToPlaceName(selectedPlaceData.getToPlaceName());
+		//setSelectedPlaceType(selectedPlaceData.getpT());
+		inputPlaceName.setText(selectedPlaceData.getToPlaceName());
+		inputPlaceNumber.setText(String.format("%d",getToPlaceNumber()));
+		inputPlacePerson.setText(selectedPlaceData.getToName());
+		inputReason.setText("Reunião Ritualística: ");
+		inputMeetingTime.setText("15:30");
+		setSelectedPlaceType(selectedPlaceData.getpT());
+		boxPlaceType.setValue(getSelectedPlaceType());
+		
+		
 		
 	}
 	
 	public void onbtCreateCraftAction() { //cria o oficio 
-	PlaceData selectedPlaceData;
+	String placeName = "",placePerson= "",reason= "",meetingTime= "",day= "",month= "";
+	int placeNumber = 0;
 	
-	selectedPlaceData = list.getValue();
-	if (selectedPlaceData == null) { //                primeiro IF
-		//então o programa correrá normalmente!
+
 		setSelectedPlaceType(boxPlaceType.getValue());
-		if (selectedPlaceType != null) {               //Segundo IF
-			getInput();
-			}		else {                           //Segundo IF
+		if (selectedPlaceType != null) {               
+			getInput(placeName,placePerson,reason,meetingTime,day,month,placeNumber);
+			}		else {                       
 	//se selectedPlaceType for NULO emite um aviso!
 				Alerts.showAlert("Alerta","UM ERRO FOI ENCONTRADO!", "Voce Precisa Selecionar um PlaceType!", AlertType.ERROR);
-			}
-	
-	} else {                                          // primeiro IF
-		//MODO AUTOMATICO!! 
-		System.out.println(selectedPlaceData.getToName());
-		System.out.println(selectedPlaceData.getToPlaceName());
-		System.out.println(selectedPlaceData.getToPlaceNumber());
-		System.out.println(selectedPlaceData.getpT());
-		System.out.println(selectedPlaceData.toString());
-	}
-		
+			}	
 	}
 	
 	
