@@ -108,9 +108,7 @@ public class LoopCreatorController implements Initializable {
 			reason = inputReason.getText();
 			meetingTime = inputMeetingTime.getText();
 			day = inputDay.getText();
-			month = inputMonth.getText();
-			labelShowResult.setText(String.format("Nome do lugar: %s\n\n\nNumero do Lugar %d\n\n\nNome da Pessoa: %s\n\n\nAssunto:"
-					+ " %s\n\n\nHorario: %s\n\n\nDia: %s\n\n\nMês: %s",placeName,placeNumber,placePerson,reason,meetingTime,day,month));			
+			month = inputMonth.getText();	
 	}
 	
 	public void onComboBoxAction() {
@@ -132,10 +130,14 @@ public class LoopCreatorController implements Initializable {
 	}
 	
 	public void onbtCreateCraftAction() { //cria o oficio 
-	String placeName = "",placePerson= "",reason= "",meetingTime= "",day= "",month= "";
+	String placeName = null,placePerson= null,reason= null,meetingTime= null,day= null,month= null;
 	int placeNumber = 0;
 	
-
+	if (inputPlaceName.getText().isEmpty() || inputPlacePerson.getText().isEmpty() 
+		    || inputReason.getText().isEmpty() || inputMeetingTime.getText().isEmpty() 
+		    || inputDay.getText().isEmpty() || inputMonth.getText().isEmpty()) {
+		    Alerts.showAlert("Alerta", "UM ERRO FOI ENCONTRADO!", "Nenhum valor pode ser NULO!", AlertType.ERROR);
+	} else {
 		setSelectedPlaceType(boxPlaceType.getValue());
 		if (selectedPlaceType != null) {               
 			getInput(placeName,placePerson,reason,meetingTime,day,month,placeNumber);
@@ -146,7 +148,7 @@ public class LoopCreatorController implements Initializable {
 	}
 	
 	
-	
+	}
 	
 	
 	
