@@ -158,9 +158,6 @@ public class LoopCreatorController implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 	List<PlaceData> lista = PlaceDataHandler.READFromFile();
-	for (PlaceData placedata : lista) {
-		System.out.println(lista);
-	}
 	list.getItems().addAll(lista);
 	boxPlaceType.getItems().addAll(PlaceType.values());
 		
