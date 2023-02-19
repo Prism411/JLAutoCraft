@@ -1,5 +1,6 @@
 package gui.Controllers;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -9,8 +10,12 @@ import entities.PlaceType;
 import gui.util.Alerts;
 import gui.util.Constraints;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -100,6 +105,28 @@ public class LoopCreatorController implements Initializable {
 	//
 	@FXML private Label labelShowResult;
 	
+	public void startConfirm() {
+		try {
+		    FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/ConfirmView.fxml"));
+		    AnchorPane newAnchorPane = loader.load();
+		    		    
+		    // criar uma nova janela
+		    Stage newStage = new Stage();
+		    newStage.setTitle("Confirmar Ofício");
+		    
+		    // definir a cena na nova janela
+		    Scene newScene = new Scene(newAnchorPane);
+		    newStage.setScene(newScene);
+		    
+		    // mostrar a nova janela
+		    newStage.show();
+		    
+		} catch (IOException e) {
+		    e.printStackTrace();
+		}
+	}
+	
+	
 	
 	public void getInput(String placeName, String placePerson,String reason,String meetingTime,String day,String month, int placeNumber) {
 			placeName = inputPlaceName.getText();
@@ -145,6 +172,10 @@ public class LoopCreatorController implements Initializable {
 	//se selectedPlaceType for NULO emite um aviso!
 				Alerts.showAlert("Alerta","UM ERRO FOI ENCONTRADO!", "Voce Precisa Selecionar um PlaceType!", AlertType.ERROR);
 			}	
+	//funfando
+	
+		startConfirm();
+	
 	}
 	
 	
