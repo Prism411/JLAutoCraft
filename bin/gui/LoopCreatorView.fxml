@@ -5,24 +5,19 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Controllers.LoopCreatorController">
+<AnchorPane prefHeight="540.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Controllers.LoopCreatorController">
    <children>
-      <ComboBox fx:id="boxPlaceType" layoutX="124.0" layoutY="41.0" prefWidth="150.0" />
-      <Label layoutX="150.0" layoutY="23.0" text="PlaceType Selector" />
-      <TextField fx:id="inputPlaceName" layoutX="43.0" layoutY="100.0" text="Nome do Lugar" />
-      <TextField fx:id="inputPlaceNumber" layoutX="43.0" layoutY="140.0" text="Numero do Lugar" />
-      <TextField fx:id="inputPlacePerson" layoutX="43.0" layoutY="180.0" text="Nome da Pessoa" />
-      <TextField fx:id="inputReason" layoutX="43.0" layoutY="220.0" text="Assunto da Reunião" />
-      <TextField fx:id="inputMeetingTime" layoutX="43.0" layoutY="260.0" text="Horario da Reunião" />
-      <TextField fx:id="inputDay" layoutX="43.0" layoutY="300.0" text="Dia da Reunião" />
-      <TextField fx:id="inputMonth" layoutX="43.0" layoutY="340.0" text="Mês da Reunião" />
-      <Label fx:id="labelShowResult" contentDisplay="CENTER" layoutX="200.0" layoutY="78.0" prefHeight="310.0" prefWidth="198.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="2.0">
-         <font>
-            <Font size="14.0" />
-         </font></Label>
-      <ComboBox fx:id="list" layoutX="59.0" layoutY="398.0" onAction="#onComboBoxAction" onDragDone="#onComboBoxAction" prefHeight="26.0" prefWidth="281.0" promptText="Puxar nome,lugar,Pessoa do banco de dados" />
-      <Button fx:id="btCreateCraft" layoutX="162.0" layoutY="445.0" mnemonicParsing="false" onAction="#onbtCreateCraftAction" text="Criar Oficio" />
+      <ComboBox fx:id="boxPlaceType" layoutX="66.0" layoutY="41.0" prefHeight="25.0" prefWidth="268.0" promptText="Selecione o Tipo do Lugar!" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="66.0" />
+      <Label layoutX="150.0" layoutY="24.0" text="Tipo do OFICIO:" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="165.0" />
+      <TextField fx:id="inputPlaceName" layoutX="126.0" layoutY="100.0" promptText="Nome do Lugar" AnchorPane.leftAnchor="126.0" AnchorPane.rightAnchor="125.0" />
+      <TextField fx:id="inputPlaceNumber" layoutX="126.0" layoutY="148.0" promptText="Numero do Lugar" AnchorPane.leftAnchor="126.0" AnchorPane.rightAnchor="125.0" />
+      <TextField fx:id="inputPlacePerson" layoutX="126.0" layoutY="200.0" promptText="Nome da Pessoa" AnchorPane.leftAnchor="126.0" AnchorPane.rightAnchor="125.0" />
+      <TextField fx:id="inputReason" layoutX="126.0" layoutY="250.0" promptText="Assunto da Reunião" AnchorPane.leftAnchor="126.0" AnchorPane.rightAnchor="125.0" />
+      <TextField fx:id="inputMeetingTime" layoutX="126.0" layoutY="300.0" promptText="Horario da Reunião" AnchorPane.leftAnchor="126.0" AnchorPane.rightAnchor="125.0" />
+      <TextField fx:id="inputDay" layoutX="126.0" layoutY="350.0" promptText="Dia da Reunião" AnchorPane.leftAnchor="126.0" AnchorPane.rightAnchor="125.0" />
+      <TextField fx:id="inputMonth" layoutX="126.0" layoutY="400.0" promptText="Mês da Reunião" AnchorPane.leftAnchor="126.0" AnchorPane.rightAnchor="125.0" />
+      <ComboBox fx:id="list" layoutX="60.0" layoutY="452.0" onAction="#onComboBoxAction" onDragDone="#onComboBoxAction" prefHeight="26.0" prefWidth="281.0" promptText="Puxar nome,lugar,Pessoa do banco de dados" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="59.0" />
+      <Button fx:id="btCreateCraft" layoutX="162.0" layoutY="489.0" mnemonicParsing="false" onAction="#onbtCreateCraftAction" text="Criar Oficio" AnchorPane.leftAnchor="162.0" AnchorPane.rightAnchor="162.0" />
    </children>
 </AnchorPane>

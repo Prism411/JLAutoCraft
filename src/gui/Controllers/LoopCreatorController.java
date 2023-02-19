@@ -1,13 +1,13 @@
 package gui.Controllers;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
 import entities.PlaceData;
 import entities.PlaceType;
 import gui.util.Alerts;
+import gui.util.Constraints;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert.AlertType;
@@ -109,8 +109,8 @@ public class LoopCreatorController implements Initializable {
 			meetingTime = inputMeetingTime.getText();
 			day = inputDay.getText();
 			month = inputMonth.getText();
-			labelShowResult.setText(String.format("Nome do lugar: %s\n\nNumero do Lugar %d\n\nNome da Pessoa: %s\n\nAssunto:"
-					+ " %s\n\nHorario: %s\n\nDia: %s\n\nMês: %s",placeName,placeNumber,placePerson,reason,meetingTime,day,month));			
+			labelShowResult.setText(String.format("Nome do lugar: %s\n\n\nNumero do Lugar %d\n\n\nNome da Pessoa: %s\n\n\nAssunto:"
+					+ " %s\n\n\nHorario: %s\n\n\nDia: %s\n\n\nMês: %s",placeName,placeNumber,placePerson,reason,meetingTime,day,month));			
 	}
 	
 	public void onComboBoxAction() {
@@ -160,7 +160,7 @@ public class LoopCreatorController implements Initializable {
 	List<PlaceData> lista = PlaceDataHandler.READFromFile();
 	list.getItems().addAll(lista);
 	boxPlaceType.getItems().addAll(PlaceType.values());
-		
+	Constraints.setTextFieldDouble(inputPlaceNumber);
 	}
 	
 	//Alerts.showAlert("AlertTitle",null, "Click", AlertType.INFORMATION);
