@@ -117,7 +117,7 @@ public class LoopCreatorController implements Initializable {
 		    // definir a cena na nova janela
 		    Scene newScene = new Scene(newAnchorPane);
 		    newStage.setScene(newScene);
-		    
+		    newStage.setResizable(false);
 		    // mostrar a nova janela
 		    newStage.show();
 		    
