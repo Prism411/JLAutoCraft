@@ -1,13 +1,18 @@
 package gui.Controllers;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import gui.util.Alerts;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Alert.AlertType;
 import services.CraftCreator;
+import services.Loader;
 
 public class ConfirmController implements Initializable {
 	
@@ -30,6 +35,25 @@ public class ConfirmController implements Initializable {
 	
 	@FXML Button btDelete;
 	@FXML Button btCreate;
+	
+	public void onBtDeleteAction() {
+	try {
+		File file = new File("c:\\temp\\out"+getCraftCounter()+".txt");
+		if(file.delete()){
+			Alerts.showAlert("ERRO!","","O Oficio" +getCraftCounter() + " Foi Excluido! ", AlertType.INFORMATION);
+		    System.out.println(file.getName() + " is deleted!");
+		}else{
+			Alerts.showAlert("ERRO!", "ERRO ENCONTRADO!","NAO FOI POSSIVEL EXCLUIR", AlertType.ERROR);
+		    System.out.println("Delete operation is failed.");
+		}
+		Loader.RemoveCraftNumber();
+	} 
+	
+	catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	}
 	
 	 void createCraft(){
 

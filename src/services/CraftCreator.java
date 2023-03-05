@@ -201,13 +201,7 @@ public class CraftCreator {
 			ConfirmController.setCraftCounter(a.getCraftNumber());
 			System.out.println("OFICIO nº"+ a.getCraftNumber()+" Criado!");
 			/*
-				File file = new File("c:\\temp\\out"+a.getCraftNumber()+".txt");
-				if(file.delete()){
-				    System.out.println(file.getName() + " is deleted!");
-				}else{
-				    System.out.println("Delete operation is failed.");
-				}
-			Loader.RemoveCraftNumber();
+			
 			break;
 			}*/
 			} catch (IOException e) {
