@@ -22,14 +22,13 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <Button fx:id="bt1" layoutX="99.0" layoutY="100.0" mnemonicParsing="false" onAction="#onBt1Action" text="Criar um Oficio do banco de dados" AnchorPane.leftAnchor="99.0" AnchorPane.rightAnchor="99.0" />
-      <Button fx:id="bt2" layoutX="99.0" layoutY="131.0" mnemonicParsing="false" onAction="#onBt2Action" text="Criar um Oficio do zero" AnchorPane.leftAnchor="99.0" AnchorPane.rightAnchor="99.0" />
-      <Button layoutX="101.0" layoutY="160.0" mnemonicParsing="false" text="Mudar Loja Patrocinadora" AnchorPane.leftAnchor="101.0" AnchorPane.rightAnchor="97.0" />
-      <Button layoutX="101.0" layoutY="190.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="202.0" text="Mudar dados da gestão" AnchorPane.leftAnchor="101.0" AnchorPane.rightAnchor="97.0" />
-      <Button layoutX="103.0" layoutY="220.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="202.0" text="Adicionar no banco de dados" AnchorPane.leftAnchor="103.0" AnchorPane.rightAnchor="95.0" />
-      <Button layoutX="101.0" layoutY="250.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="202.0" text="Remover do banco de dados" AnchorPane.leftAnchor="101.0" AnchorPane.rightAnchor="97.0" />
+      <Button fx:id="bt1" layoutX="100.0" layoutY="110.0" mnemonicParsing="false" onAction="#onBt1Action" text="Criar Oficio" AnchorPane.leftAnchor="99.0" AnchorPane.rightAnchor="99.0" />
+      <Button layoutX="100.0" layoutY="140.0" mnemonicParsing="false" text="Mudar Loja Patrocinadora" AnchorPane.leftAnchor="101.0" AnchorPane.rightAnchor="97.0" />
+      <Button layoutX="100.0" layoutY="170.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="202.0" text="Mudar dados da gestão" AnchorPane.leftAnchor="101.0" AnchorPane.rightAnchor="97.0" />
+      <Button layoutX="100.0" layoutY="200.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="202.0" text="Adicionar no banco de dados" AnchorPane.leftAnchor="103.0" AnchorPane.rightAnchor="95.0" />
+      <Button layoutX="100.0" layoutY="230.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="202.0" text="Remover do banco de dados" AnchorPane.leftAnchor="101.0" AnchorPane.rightAnchor="97.0" />
       <Button layoutX="103.0" layoutY="281.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="202.0" text="Sair do Aplicativo" AnchorPane.leftAnchor="103.0" AnchorPane.rightAnchor="95.0" />
-      <Label alignment="TOP_CENTER" layoutX="357.0" layoutY="306.0" prefHeight="10.0" prefWidth="41.0" text="Versão: 0.0.1" AnchorPane.leftAnchor="357.0" AnchorPane.rightAnchor="2.0">
+      <Label alignment="TOP_CENTER" layoutX="357.0" layoutY="306.0" prefHeight="10.0" prefWidth="41.0" text="Versão: 0.1.0" AnchorPane.leftAnchor="357.0" AnchorPane.rightAnchor="2.0">
          <font>
             <Font size="7.0" />
          </font>
