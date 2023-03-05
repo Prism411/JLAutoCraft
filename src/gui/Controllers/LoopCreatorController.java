@@ -130,12 +130,19 @@ public class LoopCreatorController implements Initializable {
 	
 	public void getInput(String placeName, String placePerson,String reason,String meetingTime,String day,String month, int placeNumber) {
 			placeName = inputPlaceName.getText();
+			setToPlaceName(placeName);
 			placeNumber = Integer.parseInt(inputPlaceNumber.getText());
+			setToPlaceNumber(placeNumber);
 			placePerson = inputPlacePerson.getText();
+			setToName(placePerson);
 			reason = inputReason.getText();
+			setReason(reason);
 			meetingTime = inputMeetingTime.getText();
+			setMeetingTime(meetingTime);
 			day = inputDay.getText();
+			setDayCraft(day);
 			month = inputMonth.getText();	
+			setMonthCraft(month);
 	}
 	
 	public void onComboBoxAction() {
@@ -168,13 +175,14 @@ public class LoopCreatorController implements Initializable {
 		setSelectedPlaceType(boxPlaceType.getValue());
 		if (selectedPlaceType != null) {               
 			getInput(placeName,placePerson,reason,meetingTime,day,month,placeNumber);
+			startConfirm();
 			}		else {                       
 	//se selectedPlaceType for NULO emite um aviso!
 				Alerts.showAlert("Alerta","UM ERRO FOI ENCONTRADO!", "Voce Precisa Selecionar um PlaceType!", AlertType.ERROR);
 			}	
 	//funfando
 	
-		startConfirm();
+
 	
 	}
 	
