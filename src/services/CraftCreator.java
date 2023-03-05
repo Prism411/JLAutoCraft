@@ -10,6 +10,7 @@ import entities.CraftFloat;
 import entities.CraftStatic;
 import entities.PlaceType;
 import entities.craftAdress;
+import gui.Controllers.ConfirmController;
 
 public class CraftCreator {
 	
@@ -197,6 +198,7 @@ public class CraftCreator {
 			CraftAuto a = Reader.ReadAutoData(); //le os valores do oficio automatizado
 			CraftStatic cS = Reader.ReadStaticData(); //le os valores do oficio estatico
 			CraftCreator.CraftCreate(cF, cA, cS, a); //cria e escreve o oficio
+			ConfirmController.setCraftCounter(a.getCraftNumber());
 			System.out.println("OFICIO nº"+ a.getCraftNumber()+" Criado!");
 			/*
 				File file = new File("c:\\temp\\out"+a.getCraftNumber()+".txt");
