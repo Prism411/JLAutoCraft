@@ -51,7 +51,7 @@ public class ConfirmController implements Initializable {
 	try {
 		File file = new File("c:\\temp\\out"+getCraftCounter()+".txt");
 		if(file.delete()){
-			Alerts.showAlert("ERRO!","","O Oficio" +getCraftCounter() + " Foi Excluido! ", AlertType.INFORMATION);
+			Alerts.showAlert("SUCESSO!","","O Oficio" +getCraftCounter() + " Foi Excluido! ", AlertType.INFORMATION);
 		    System.out.println(file.getName() + " is deleted!");
 		    Loader.RemoveCraftNumber();
 		}else{
